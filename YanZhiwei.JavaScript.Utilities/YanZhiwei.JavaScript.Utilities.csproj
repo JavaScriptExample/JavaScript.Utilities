@@ -43,6 +43,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNet2.Interfaces, Version=1.0.5994.41447, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet2.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet2.Utilities, Version=1.0.5994.41447, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet2.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet3.5.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet3.5.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet3.5.Utilities, Version=1.0.5994.41448, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet3.5.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -174,6 +190,12 @@
     <Content Include="bs\v3\typeahead\typeahead.bundle.js" />
     <Content Include="bs\v3\typeahead\typeahead.bundle.min.js" />
     <Content Include="bs\v3\typeahead\typeahead.css" />
+    <Content Include="DLL\DotNet2.Interfaces.dll" />
+    <Content Include="DLL\DotNet2.Utilities.dll" />
+    <Content Include="DLL\DotNet2.Utilities.xml" />
+    <Content Include="DLL\DotNet3.5.Interfaces.dll" />
+    <Content Include="DLL\DotNet3.5.Utilities.dll" />
+    <Content Include="DLL\DotNet3.5.Utilities.XML" />
     <Content Include="Global.asax" />
     <Content Include="jquery\datatables\1.10.2\all.min.js" />
     <Content Include="jquery\datatables\1.10.2\arrays.txt" />
