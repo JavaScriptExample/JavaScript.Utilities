@@ -245,6 +245,119 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             }
             return flag;
         },
+        getHost: function (url) {
+            /// <summary>
+            /// 获取域名主机
+            /// </summary>
+            /// <param name="url" type="type">域名</param>
+            var host = "null";
+            if (typeof url == "undefined" || null == url) {
+                url = window.location.href;
+            }
+            var regex = /^\w+\:\/\/([^\/]*).*/;
+            var match = url.match(regex);
+            if (typeof match != "undefined" && null != match) {
+                host = match[1];
+            }
+            return host;
+        },
+        addFavorite: function (url, title) {
+            /// <summary>
+            /// 加入收藏夹
+            /// </summary>
+            /// <param name="sURL" type="type"></param>
+            /// <param name="sTitle" type="type"></param>
+            try {
+                window.external.addFavorite(url, title);
+            } catch (e) {
+                try {
+                    window.sidebar.addPanel(title, url, "");
+                } catch (e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        },
+        getCurrentPageUrl: function () {
+            /// <summary>
+            ///获取当前路径
+            /// </summary>
+            var currentPageUrl = "";
+            if (typeof this.href === "undefined") {
+                currentPageUrl = document.location.toString().toLowerCase();
+            } else {
+                currentPageUrl = this.href.toString().toLowerCase();
+            }
+            return currentPageUrl;
+        },
+        setHomepage: function () {
+            /// <summary>
+            /// 设为首页
+            /// </summary>
+            if (document.all) {
+                document.body.style.behavior = 'url(#default#homepage)';
+                document.body.setHomePage('http://***');
+            } else if (window.sidebar) {
+                if (window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager
+                                .enablePrivilege("UniversalXPConnect");
+                    } catch (e) {
+                        alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+                    }
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1']
+                        .getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage', 'http://***');
+            }
+        },
+        getExplorerInfo: function () {
+            /// <summary>
+            /// 返回浏览器版本
+            /// 返回一个对象,对象属性：type，version
+            /// </summary>
+            var explorer = window.navigator.userAgent.toLowerCase();
+            // ie
+            if (explorer.indexOf("msie") >= 0) {
+                var ver = explorer.match(/msie ([\d.]+)/)[1];
+                return {
+                    type: "IE",
+                    version: ver
+                };
+            }
+                // firefox
+            else if (explorer.indexOf("firefox") >= 0) {
+                var ver = explorer.match(/firefox\/([\d.]+)/)[1];
+                return {
+                    type: "Firefox",
+                    version: ver
+                };
+            }
+                // Chrome
+            else if (explorer.indexOf("chrome") >= 0) {
+                var ver = explorer.match(/chrome\/([\d.]+)/)[1];
+                return {
+                    type: "Chrome",
+                    version: ver
+                };
+            }
+                // Opera
+            else if (explorer.indexOf("opera") >= 0) {
+                var ver = explorer.match(/opera.([\d.]+)/)[1];
+                return {
+                    type: "Opera",
+                    version: ver
+                };
+            }
+                // Safari
+            else if (explorer.indexOf("Safari") >= 0) {
+                var ver = explorer.match(/version\/([\d.]+)/)[1];
+                return {
+                    type: "Safari",
+                    version: ver
+                };
+            }
+        },
+
         loadScript: function (url, callback) {
             /// <summary>
             /// 动态加载js
@@ -271,7 +384,157 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             document.body.appendChild(script);
         }
     };
+    js.mobile = {
+        isMobile: function () {
+            /// <summary>
+            /// 判断是否移动设备
+            /// </summary>
+            /// <returns type=""></returns>
+            if (typeof this._isMobile === 'boolean') {
+                return this._isMobile;
+            }
+            var screenWidth = this.getScreenWidth();
+            var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport
+                    || rendererModel.runningExperiments.fixviewport;
+            var fixViewPortsExperimentRunning = fixViewPortsExperiment
+                    && (fixViewPortsExperiment.toLowerCase() === "new");
+            if (!fixViewPortsExperiment) {
+                if (!this.isAppleMobileDevice()) {
+                    screenWidth = screenWidth / window.devicePixelRatio;
+                }
+            }
+            var isMobileScreenSize = screenWidth < 600;
+            var isMobileUserAgent = false;
+            this._isMobile = isMobileScreenSize && this.isTouchScreen();
+            return this._isMobile;
+        },
+        isMobileUserAgent: function () {
+            /// <summary>
+            /// 判断是否移动设备访问
+            /// </summary>
+            /// <returns type=""></returns>
+            return (/iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i
+            .test(window.navigator.userAgent.toLowerCase()));
+        },
+        isAppleMobileDevice: function () {
+            /// <summary>
+            /// 判断是否苹果移动设备访问
+            /// </summary>
+            return (/iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent
+            .toLowerCase()));
+        },
+        isAndroidMobileDevice: function () {
+            /// <summary>
+            /// 判断是否安卓移动设备访问
+            /// </summary>
+            return (/android/i.test(navigator.userAgent.toLowerCase()));
+        },
+        isTouchScreen: function () {
+            /// <summary>
+            /// 判断是否Touch屏幕
+            /// </summary>
+            /// <returns type=""></returns>
+            return (('ontouchstart' in window) || window.DocumentTouch
+            && document instanceof DocumentTouch);
+        },
+        isNewChromeOnAndroid: function () {
+            /// <summary>
+            /// 判断是否在安卓上的谷歌浏览器
+            /// </summary>
+            if (this.isAndroidMobileDevice()) {
+                var userAgent = navigator.userAgent.toLowerCase();
+                if ((/chrome/i.test(userAgent))) {
+                    var parts = userAgent.split('chrome/');
+
+                    var fullVersionString = parts[1].split(" ")[0];
+                    var versionString = fullVersionString.split('.')[0];
+                    var version = parseInt(versionString);
+
+                    if (version >= 27) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        },
+        isViewportOpen: function () {
+            /// <summary>
+            /// 判断是否打开视窗
+            /// </summary>
+            /// <returns type=""></returns>
+            return !!document.getElementById('wixMobileViewport');
+        },
+        getInitZoom: function () {
+            /// <summary>
+            /// 获取移动设备初始化大小
+            /// </summary>
+            if (!this._initZoom) {
+                var screenWidth = Math.min(screen.height, screen.width);
+                if (this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()) {
+                    screenWidth = screenWidth / window.devicePixelRatio;
+                }
+                this._initZoom = screenWidth / document.body.offsetWidth;
+            }
+            return this._initZoom;
+        },
+        getZoom: function () {
+            /// <summary>
+            ///  获取移动设备最大化大小
+            /// </summary>
+            var screenWidth = (Math.abs(window.orientation) === 90) ? Math.max(screen.height, screen.width) : Math.min(screen.height, screen.width);
+            if (this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()) {
+                screenWidth = screenWidth / window.devicePixelRatio;
+            }
+            var FixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+            var FixViewPortsExperimentRunning = FixViewPortsExperiment && (FixViewPortsExperiment === "New" || FixViewPortsExperiment === "new");
+            if (FixViewPortsExperimentRunning) {
+                return screenWidth / window.innerWidth;
+            } else {
+                return screenWidth / document.body.offsetWidth;
+            }
+        },
+        getScreenWidth: function () {
+            /// <summary>
+            /// 获取移动设备屏幕宽度
+            /// </summary>
+            /// <returns type=""></returns>
+            var smallerSide = Math.min(screen.width, screen.height);
+            var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+            var fixViewPortsExperimentRunning = fixViewPortsExperiment && (fixViewPortsExperiment.toLowerCase() === "new");
+            if (fixViewPortsExperiment) {
+                if (this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()) {
+                    smallerSide = smallerSide / window.devicePixelRatio;
+                }
+            }
+            return smallerSide;
+        }
+    };
     jsUtils.string = {
+        cutstr: function (str, length) {
+            /// <summary>
+            /// 字符串长度截取
+            /// </summary>
+            /// <param name="str" type="type">字符串</param>
+            /// <param name="length" type="type">长度</param>
+            var temp;
+            var icount = 0;
+            var patrn = /[^\x00-\xff]/;
+            var strre = "";
+            for (var i = 0; i < str.length; i++) {
+                if (icount < len - 1) {
+                    temp = str.substr(i, 1);
+                    if (patrn.exec(temp) == null) {
+                        icount = icount + 1;
+                    } else {
+                        icount = icount + 2;
+                    }
+                    strre += temp;
+                } else {
+                    break;
+                }
+            }
+            return strre + "...";
+        },
         isNullOrEmpty: function (data) {
             /// <summary>
             /// 判断NULL或者空
@@ -502,10 +765,20 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
                 JsUtils.selectedRange(obj);
                 document.execCommand('copy', true);
             }
+        },
+        getVersion: function () {
+            /// <summary>
+            /// 返回IE浏览器的版本号
+            /// </summary>
+            /// <returns type=""></returns>
+            if (window.ActiveXObject) {
+                var v = navigator.userAgent.match(/MSIE ([^;]+)/)[1];
+                return parseFloat(v.substring(0, v.indexOf(".")));
+            }
+            return false;
         }
     };
-    jsUtils.dialog =
-    {
+    jsUtils.dialog = {
         CONSTANT:
           {
               WIDTH: 300,
@@ -782,6 +1055,36 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             }
         }
     }
+    jsUtils.ip = {
+        toInt: function (ip) {
+            /// <summary>
+            ///ip字符串转换为数字
+            /// </summary>
+            /// <param name="ip" type="type">整形</param>
+            var num = 0;
+            ip = ip.split(".");
+            num = Number(ip[0]) * 256 * 256 * 256 + Number(ip[1]) * 256 * 256
+                    + Number(ip[2]) * 256 + Number(ip[3]);
+            num = num >>> 0;
+            return num;
+        },
+        parseInt: function (number) {
+            /// <summary>
+            /// 整型解析为IP地址
+            /// </summary>
+            /// <param name="number" type="type">整形</param>
+            /// <returns type="">IP地址</returns>
+            var _ipString;
+            var tt = new Array();
+            tt[0] = (number >>> 24) >>> 0;
+            tt[1] = ((number << 8) >>> 24) >>> 0;
+            tt[2] = (number << 16) >>> 24;
+            tt[3] = (number << 24) >>> 24;
+            _ipString = String(tt[0]) + "." + String(tt[1]) + "." + String(tt[2]) + "."
+                    + String(tt[3]);
+            return str;
+        }
+    }
     jsUtils.cookie = {
         create: function (name, value, days) {
             /// <summary>
@@ -859,6 +1162,54 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             /// <returns type=""></returns>
             obj = this.hanlderObj(obj);
             return JSON.stringify(obj);
+        }
+    };
+    jsUtils.page = {
+        getHeight: function () {
+            /// <summary>
+            /// 获取页面高度
+            /// </summary>
+            /// <returns type=""></returns>
+            var g = document, a = g.body, f = g.documentElement, d = g.compatMode == "BackCompat"
+            ? a
+            : g.documentElement;
+            return Math.max(f.scrollHeight, a.scrollHeight, d.clientHeight);
+        },
+        getWidth: function () {
+            /// <summary>
+            /// 获取页面宽度
+            /// </summary>
+            /// <returns type=""></returns>
+            var g = document, a = g.body, f = g.documentElement, d = g.compatMode == "BackCompat"
+              ? a
+              : g.documentElement;
+            return Math.max(f.scrollWidth, a.scrollWidth, d.clientWidth);
+        },
+        getScrollLeft: function () {
+            /// <summary>
+            /// 获取页面scrollLeft
+            /// </summary>
+            /// <returns type=""></returns>
+            var a = document;
+            return a.documentElement.scrollLeft || a.body.scrollLeft;
+        },
+        getScrollTop: function () {
+            /// <summary>
+            /// 获取页面scrollTop
+            /// </summary>
+            /// <returns type=""></returns>
+            var a = document;
+            return a.documentElement.scrollTop || a.body.scrollTop;
+        },
+        getViewHeight: function () {
+            /// <summary>
+            /// 获取页面可视高度
+            /// </summary>
+            /// <returns type=""></returns>
+            var d = document, a = d.compatMode == "BackCompat"
+                ? d.body
+                : d.documentElement;
+            return a.clientHeight;
         }
     }
     window.jsUtils = jsUtils;
