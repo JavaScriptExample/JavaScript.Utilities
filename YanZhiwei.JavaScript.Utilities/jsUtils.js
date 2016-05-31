@@ -384,6 +384,188 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             document.body.appendChild(script);
         }
     };
+    js.check = {
+        isIP: function (strIP) {
+            /// <summary>
+            /// 是否是IP地址
+            /// </summary>
+            /// <param name="strIP" type="type">IP地址</param>
+            /// <returns type=""></returns>
+            if (this.isNull(strIP)) return false;
+            var re = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/g //匹配IP地址的正则表达式
+            if (re.test(strIP)) {
+                if (RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) return true;
+            }
+            return false;
+        },
+        isNull: function (str) {
+            /// <summary>
+            /// 检查输入字符串是否为空或者全部都是空格
+            /// </summary>
+            /// <param name="str" type="type">字符串</param>
+            /// <returns type="">如果全是空返回true,否则返回false</returns>
+            if (str == "") return true;
+            var regu = "^[ ]+$";
+            var re = new RegExp(regu);
+            return re.test(str);
+        },
+        isInteger: function (str) {
+            /// <summary>
+            /// 检查输入对象的值是否符合整数格式
+            /// </summary>
+            /// <param name="str" type="type">输入的字符串</param>
+            /// <returns type="">如果通过验证返回true,否则返回false</returns>
+            var regu = /^[-]{0,1}[0-9]{1,}$/;
+            return regu.test(str);
+        },
+        isNumber: function (s) {
+            /// <summary>
+            /// 检查输入字符串是否符合正整数格式
+            /// </summary>
+            /// <param name="s" type="type">输入的字符串</param>
+            /// <returns type="">如果通过验证返回true,否则返回false</returns>
+            var regu = "^[0-9]+$";
+            var re = new RegExp(regu);
+            if (s.search(re) != -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isDecimal: function (str) {
+            /// <summary>
+            ///检查输入字符串是否是带小数的数字格式,可以是负数
+            /// </summary>
+            /// <param name="str" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            if (this.isInteger(str)) return true;
+            var re = /^[-]{0,1}(\d+)[\.]+(\d+)$/;
+            if (re.test(str)) {
+                if (RegExp.$1 == 0 && RegExp.$2 == 0) return false;
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isPort: function (str) {
+            /// <summary>
+            /// 检查输入对象的值是否符合端口号格式
+            /// </summary>
+            /// <param name="str" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            return (this.isNumber(str) && str < 65536);
+        },
+        isEmail: function (str) {
+            /// <summary>
+            /// 检查输入对象的值是否符合E-Mail格式
+            /// </summary>
+            /// <param name="str" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/;
+            if (myReg.test(str)) return true;
+            return false;
+        },
+        isMoney: function (s) {
+            /// <summary>
+            /// 检查输入字符串是否符合金额格式格式定义为带小数的正数，小数点后最多三位
+            /// </summary>
+            /// <param name="s" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            var regu = "^[0-9]+[\.][0-9]{0,3}$";
+            var re = new RegExp(regu);
+            if (re.test(s)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isNumberOr_Letter: function (s) {
+            /// <summary>
+            /// 检查输入字符串是否只由英文字母和数字和下划线组成
+            /// </summary>
+            /// <param name="s" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            var regu = "^[0-9a-zA-Z\_]+$";
+            var re = new RegExp(regu);
+            if (re.test(s)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isNumberOrLetter: function (s) {
+            /// <summary>
+            /// 检查输入字符串是否只由英文字母和数字组成
+            /// </summary>
+            /// <param name="s" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            var regu = "^[0-9a-zA-Z]+$";
+            var re = new RegExp(regu);
+            if (re.test(s)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isChinaOrNumbOrLett: function (s) {
+            /// <summary>
+            /// 检查输入字符串是否只由汉字、字母、数字组成
+            /// </summary>
+            /// <param name="s" type="type">输入的字符串</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            var regu = "^[0-9a-zA-Z\u4e00-\u9fa5]+$";
+            var re = new RegExp(regu);
+            if (re.test(s)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isDate: function (date, fmt) {
+            /// <summary>
+            /// 判断是否是日期
+            /// </summary>
+            /// <param name="date" type="type">日期</param>
+            /// <param name="fmt" type="type">日期格式</param>
+            /// <returns type="">通过验证返回true,否则返回false</returns>
+            if (fmt == null) fmt = "yyyyMMdd";
+            var yIndex = fmt.indexOf("yyyy");
+            if (yIndex == -1) return false;
+            var year = date.substring(yIndex, yIndex + 4);
+            var mIndex = fmt.indexOf("MM");
+            if (mIndex == -1) return false;
+            var month = date.substring(mIndex, mIndex + 2);
+            var dIndex = fmt.indexOf("dd");
+            if (dIndex == -1) return false;
+            var day = date.substring(dIndex, dIndex + 2);
+            if (!isNumber(year) || year > "2100" || year < "1900") return false;
+            if (!isNumber(month) || month > "12" || month < "01") return false;
+            if (day > getMaxDay(year, month) || day < "01") return false;
+            return true;
+        },
+        isLastMatch: function (str1, str2) {
+            /// <summary>
+            /// 字符1是否以字符串2结束
+            /// </summary>
+            /// <param name="str1" type="type">字符串</param>
+            /// <param name="str2" type="type">被包含的字符串</param>
+            /// <returns type="">如果通过验证返回true,否则返回false</returns>
+            var index = str1.lastIndexOf(str2);
+            if (str1.length == index + str2.length) return true;
+            return false;
+        },
+        isFirstMatch: function (str1, str2) {
+            /// <summary>
+            /// 字符1是否以字符串2开始
+            /// </summary>
+            /// <param name="str1" type="type">字符串</param>
+            /// <param name="str2" type="type">被包含的字符串</param>
+            /// <returns type="">如果通过验证返回true,否则返回false</returns>
+            var index = str1.indexOf(str2);
+            if (index == 0) return true;
+            return false;
+        }
+    };
     js.mobile = {
         isMobile: function () {
             /// <summary>
