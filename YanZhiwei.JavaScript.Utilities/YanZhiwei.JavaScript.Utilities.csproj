@@ -531,6 +531,7 @@
     <Content Include="jquery\datatables\1.10.2\plugins\bootstrap\dataTables.bootstrap.css" />
     <Content Include="jquery\datatables\1.10.2\plugins\bootstrap\dataTables.bootstrap.js" />
     <Content Include="jquery\zTree\3.5\zTree_example1.aspx" />
+    <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />
     <Content Include="JsDemo2.aspx" />
     <Content Include="jsUtilsTest.html" />
@@ -728,6 +729,7 @@
     <Content Include="bs\v3\css\bootstrap-rtl.css.map" />
     <Content Include="bs\v3\css\bootstrap.css.map" />
     <Content Include="BackHandler\BaseHandler.ashx" />
+    <Content Include="data.json" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="jquery\jquery-1.9.1.js" />
     <Content Include="jquery\jquery-1.9.1.min.js" />
@@ -1311,6 +1313,13 @@
     </Compile>
     <Compile Include="jquery\zTree\3.5\zTree_example1.aspx.designer.cs">
       <DependentUpon>zTree_example1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jqUtilsDemo.aspx.cs">
+      <DependentUpon>jqUtilsDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jqUtilsDemo.aspx.designer.cs">
+      <DependentUpon>jqUtilsDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="JsDemo.aspx.cs">
       <DependentUpon>JsDemo.aspx</DependentUpon>

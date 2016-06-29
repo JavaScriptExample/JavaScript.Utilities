@@ -120,6 +120,44 @@
             if (_tableObj.length > 0) {
                 _tableObj[rowIndex][cellIndex].html(cellValue);
             }
+        },
+        createHeaderRow: function (id, json) {
+            /// <summary>
+            /// 创建Table Header
+            /// </summary>
+            /// <param name="id">table id</param>
+            /// <param name="json">json数据</param>
+            /// <returns type="">Table Header Header</returns>
+            var columnSet = [];
+            var headerTr$ = $('<tr/>');
+            for (var i = 0; i < json.length; i++) {
+                var rowHash = json[i];
+                for (var key in rowHash) {
+                    if ($.inArray(key, columnSet) == -1) {
+                        columnSet.push(key);
+                        headerTr$.append($('<th/>').html(key));
+                    }
+                }
+            }
+            $("#" + id).append(headerTr$);
+            return columnSet;
+        },
+        createTable: function (id, json) {
+            /// <summary>
+            /// 创建Table
+            /// </summary>
+            /// <param name="id">table id</param>
+            /// <param name="json">json数据</param>
+            var columns = this.createHeaderRow(id, json);
+            for (var i = 0; i < json.length; i++) {
+                var row$ = $('<tr/>');
+                for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+                    var cellValue = json[i][columns[colIndex]];
+                    if (cellValue == null) { cellValue = ""; }
+                    row$.append($('<td/>').html(cellValue));
+                }
+                $("#" + id).append(row$);
+            }
         }
     }
     jqUtils.Ajax = {
