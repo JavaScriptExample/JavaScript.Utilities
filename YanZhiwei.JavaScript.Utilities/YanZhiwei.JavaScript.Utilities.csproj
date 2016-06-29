@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNet.Newtonsoft.Json.Utilities, Version=1.0.6024.26539, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet.Newtonsoft.Json.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="DotNet2.Interfaces, Version=1.0.5994.41447, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\DotNet2.Interfaces.dll</HintPath>
@@ -60,6 +64,10 @@
       <HintPath>DLL\DotNet3.5.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -190,12 +198,16 @@
     <Content Include="bs\v3\typeahead\typeahead.bundle.js" />
     <Content Include="bs\v3\typeahead\typeahead.bundle.min.js" />
     <Content Include="bs\v3\typeahead\typeahead.css" />
+    <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.dll" />
+    <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.XML" />
     <Content Include="DLL\DotNet2.Interfaces.dll" />
     <Content Include="DLL\DotNet2.Utilities.dll" />
     <Content Include="DLL\DotNet2.Utilities.xml" />
     <Content Include="DLL\DotNet3.5.Interfaces.dll" />
     <Content Include="DLL\DotNet3.5.Utilities.dll" />
     <Content Include="DLL\DotNet3.5.Utilities.XML" />
+    <Content Include="DLL\Newtonsoft.Json.dll" />
+    <Content Include="DLL\Newtonsoft.Json.xml" />
     <Content Include="Global.asax" />
     <Content Include="jquery\datatables\1.10.2\all.min.js" />
     <Content Include="jquery\datatables\1.10.2\arrays.txt" />
@@ -730,6 +742,7 @@
     <Content Include="bs\v3\css\bootstrap.css.map" />
     <Content Include="BackHandler\BaseHandler.ashx" />
     <Content Include="data.json" />
+    <Content Include="BackHandler\QueryHandler.ashx" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="jquery\jquery-1.9.1.js" />
     <Content Include="jquery\jquery-1.9.1.min.js" />
@@ -1241,6 +1254,9 @@
     <Compile Include="BackHandler\BaseHandler.ashx.cs">
       <DependentUpon>BaseHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="BackHandler\QueryHandler.ashx.cs">
+      <DependentUpon>QueryHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="bs\v3\bootboxDemo.aspx.cs">
       <DependentUpon>bootboxDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1342,6 +1358,7 @@
     <Compile Include="js\setIntervalTest.aspx.designer.cs">
       <DependentUpon>setIntervalTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="store.js\storeTest.aspx.cs">
       <DependentUpon>storeTest.aspx</DependentUpon>
@@ -1377,20 +1394,6 @@
     <Content Include="jquery\zTree\3.5\zTree_v3-master\demo\en\asyncData\getNodesForBigData.php" />
     <Content Include="jquery\zTree\3.5\zTree_v3-master\README.md" />
     <Content Include="jquery\zTree\3.5\zTree_v3-master\zTree.v3.jquery.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YanZhiwei.DotNet2.Utilities\YanZhiwei.DotNet2.Utilities.csproj">
-      <Project>{2868748d-6fec-4423-8254-bc366507c589}</Project>
-      <Name>YanZhiwei.DotNet2.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YanZhiwei.DotNet3.5.Utilities\YanZhiwei.DotNet3.5.Utilities.csproj">
-      <Project>{fce5db97-96ec-4e53-bc19-eee6f2aa88e0}</Project>
-      <Name>YanZhiwei.DotNet3.5.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YanZhiwei.DotNet4.Utilities\YanZhiwei.DotNet4.Utilities.csproj">
-      <Project>{f28c6057-ba11-4b01-89f0-471ac92683df}</Project>
-      <Name>YanZhiwei.DotNet4.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />

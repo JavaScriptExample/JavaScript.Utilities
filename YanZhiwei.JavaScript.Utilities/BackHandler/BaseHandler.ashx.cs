@@ -5,6 +5,7 @@ using System.Net;
 using System.Web;
 using YanZhiwei.DotNet3._5.Utilities.Model;
 using YanZhiwei.DotNet3._5.Utilities.WebForm.Jquery;
+using YanZhiwei.JavaScript.Utilities.Model;
 
 namespace YanZhiwei.JavaScript.Utilities.BackHandler
 {
@@ -114,9 +115,5 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
         }
     }
 
-    public class Person
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+
 }

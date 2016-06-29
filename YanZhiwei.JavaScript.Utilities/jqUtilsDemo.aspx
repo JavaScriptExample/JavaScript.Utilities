@@ -10,7 +10,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $.getJSON("data.json", function (data) {
+            $.getJSON("BackHandler/QueryHandler.ashx?action=queryperson", function (data) {
                 jqUtils.UITable.createTable('jsonTable', data);
             });
         });
@@ -21,6 +21,7 @@
         <div style="margin: 20px auto; width: 500px;">
             <table id="jsonTable" style="border-collapse: collapse;" border="1" cellpadding="5">
             </table>
+
         </div>
     </form>
 </body>
