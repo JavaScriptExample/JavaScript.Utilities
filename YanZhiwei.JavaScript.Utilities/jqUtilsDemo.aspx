@@ -12,9 +12,9 @@
             $.getJSON("BackHandler/QueryHandler.ashx?action=queryperson", function (data) {
                 var table = document.createElement('table');
                 table.id = "jsonTable";
-                table.style = "border-collapse: collapse;";
-                table.border = "1";
-                table.cellPadding = "5";
+                //table.style = "border-collapse: collapse;";
+                //table.border = "1";
+                //table.cellPadding = "5";
                 $('#container').append(table);
                 // document.body.appendChild(table);
                 jqUtils.UITable.createTable('jsonTable', data);
@@ -22,9 +22,9 @@
             $.getJSON("BackHandler/QueryHandler.ashx?action=queryperson", function (data) {
                 var table = document.createElement('table');
                 table.id = "jsonTable2";
-                table.style = "border-collapse: collapse;";
-                table.border = "1";
-                table.cellPadding = "5";
+                //table.style = "border-collapse: collapse;";
+                //table.border = "1";
+                //table.cellPadding = "5";
                 $('#container').append(table);
                 //  document.body.appendChild(table);
                 jqUtils.UITable.createTable('jsonTable2', data);

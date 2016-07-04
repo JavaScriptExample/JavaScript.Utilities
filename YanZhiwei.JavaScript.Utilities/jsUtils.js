@@ -384,7 +384,7 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             document.body.appendChild(script);
         }
     };
-    js.check = {
+    jsUtils.check = {
         isIP: function (strIP) {
             /// <summary>
             /// 是否是IP地址
@@ -566,7 +566,7 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             return false;
         }
     };
-    js.mobile = {
+    jsUtils.mobile = {
         isMobile: function () {
             /// <summary>
             /// 判断是否移动设备
@@ -847,6 +847,17 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
             /// <param name="days">增加天数</param>
             /// <param name="format">格式</param>
             var _newDate = new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
+            return this.formart(_newDate, format);
+        },
+        addHours: function (date, hour, format) {
+            /// <summary>
+            /// 增加小时
+            /// <para>eg:jsUtils.datetime.addHours(new Date(), 2);</para>
+            /// </summary>
+            /// <param name="date">目标日期</param>
+            /// <param name="days">增加天数</param>
+            /// <param name="format">格式</param>
+            var _newDate = new Date(date.getTime() + hour * 60 * 60 * 1000);
             return this.formart(_newDate, format);
         },
         getFriendlyString: function (time) {

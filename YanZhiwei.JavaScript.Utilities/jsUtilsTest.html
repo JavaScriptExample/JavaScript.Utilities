@@ -100,6 +100,11 @@
             var _array = _dic.order("4", false);
 
         }
+        function addHoursTest() {
+
+            alert(jsUtils.datetime.addHours(new Date(), 2));
+
+        }
     </script>
 </head>
 <body>
@@ -107,9 +112,10 @@
     <input id="Button2" type="button" value="urlget" onclick="urlget()" />
     <input id="Button3" type="button" value="is" onclick="isTest()" />
     <input id="Button4" type="button" value="Uri" onclick="UriTest()" />
-    <input id="Button4" type="button" value="JsonSerialize" onclick="jsonSerializeTest()" />
-    <input id="Button5" type="button" value="DictionaryToArray" onclick="dictionaryToArrayTest()" />
-    <input id="Button6" type="button" value="DictionaryforInTest" onclick="dictionaryforInTest()" />
+    <input id="Button5" type="button" value="JsonSerialize" onclick="jsonSerializeTest()" />
+    <input id="Button6" type="button" value="DictionaryToArray" onclick="dictionaryToArrayTest()" />
+    <input id="Button7" type="button" value="DictionaryforInTest" onclick="dictionaryforInTest()" />
+    <input id="Button8" type="button" value="addHoursTest" onclick="addHoursTest()" />
     <!--<input id="Button7" type="button" value="DictionaryOrderTest" onclick="dictionaryOrderTest()" />-->
 </body>
 </html>
