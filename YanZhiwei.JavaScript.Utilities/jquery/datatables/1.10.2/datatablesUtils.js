@@ -442,6 +442,25 @@
             });
             return _rows;
         },
+        getRowHtmlByParam: function (key, value) {
+            /// <summary>
+            /// 根据键值搜索nRow
+            /// </summary>
+            /// <param name="key" type="type">需要精确匹配的属性名称</param>
+            /// <param name="value" type="type">需要精确匹配的属性值，可以是任何类型，只要保证与 key 指定的属性值保持一致即可</param>
+            /// <returns type="">nRow</returns>
+            var _id = $(this).attr('id'),
+            _table = $('#' + _id).dataTable(),
+            _row = null;
+            var _nTrs = _table.fnGetNodes();//fnGetNodes获取表格所有行
+            for (var i = 0; i < _nTrs.length; i++) {
+                var _rowData = _table.fnGetData(_nTrs[i]);
+                if (_rowData[key] == value) {
+                    _row = _nTrs[i];
+                }
+            }
+            return _row;
+        },
         deleteRowByParam: function (key, value) {
             /// <summary>
             /// 根据键值删除行数据
