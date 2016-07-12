@@ -457,6 +457,7 @@
                 var _rowData = _table.fnGetData(_nTrs[i]);
                 if (_rowData[key] == value) {
                     _row = _nTrs[i];
+                    break;
                 }
             }
             return _row;
