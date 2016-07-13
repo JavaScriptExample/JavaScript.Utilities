@@ -119,6 +119,10 @@
             var table = $('#tableLog').dataTable();
             var _row = table.getRowHtmlByParam('time', '2015-10-11');
             $(_row).css("background-color", "red");
+            setTimeout(function () {
+                var _row = table.getRowHtmlByParam('time', '2015-10-11');
+                $(_row).css("background-color", "green");
+            }, 2000);
         }
     </script>
 </head>
