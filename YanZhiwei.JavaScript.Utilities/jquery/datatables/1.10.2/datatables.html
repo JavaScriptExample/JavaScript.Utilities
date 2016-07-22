@@ -16,6 +16,9 @@
         /*table.dataTable tbody tr.selected {
             background-color: lightgreen;
         }*/
+        .ui-tooltip {
+            white-space: pre-line;
+        }
     </style>
 
     <script type="text/javascript">
@@ -48,6 +51,7 @@
 
         });
         function AddJson() {
+
             var _jsonObj = [{ "time": "2015-10-11", "log": "test", "status": "正常" },
            { "time": "2015-10-12", "log": "test", "status": "正常" },
            { "time": "2015-10-13", "log": "test", "status": "正常" }
@@ -103,7 +107,7 @@
             })
         }
         function getRowByParam() {
-            var table = $('#tableLog').dataTable();
+            var table = $('#tableLog2').dataTable();
             var _row = table.getRowByParam('time', '2015-10-11');
             _row.data().time = '2015-10-22';
         }
@@ -134,14 +138,13 @@
             }, 2000);
         }
         function addRowTooltip() {
-            $('#tableLog tbody tr').each(function () {
-
+            $('#tableLog tbody tr').each(function (i, row) {
                 var sTitle;
-
                 var nTds = $('td', this);
                 var sBrowser = $(nTds[1]).text();
-                console.log("sBrowser:" + sBrowser);
-                this.setAttribute('title', sBrowser);
+                this.setAttribute('title', sBrowser + "\n" + "cccc");
+                //获取rowData方式；
+                //var _rowdata = $('#tableCabChTotalView').dataTable().fnGetData($(row)[0]);
             });
 
             var oTable = $('#tableLog').dataTable();
