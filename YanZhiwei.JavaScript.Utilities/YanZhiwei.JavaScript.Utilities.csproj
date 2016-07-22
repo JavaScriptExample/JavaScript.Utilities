@@ -542,6 +542,24 @@
     <Content Include="jquery\datatables\1.10.2\plugins\bootstrap\dataTables.bootstrap-rtl.css" />
     <Content Include="jquery\datatables\1.10.2\plugins\bootstrap\dataTables.bootstrap.css" />
     <Content Include="jquery\datatables\1.10.2\plugins\bootstrap\dataTables.bootstrap.js" />
+    <Content Include="jquery\jquery-ui-1.12.0\AUTHORS.txt" />
+    <Content Include="jquery\jquery-ui-1.12.0\external\jquery\jquery.js" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_444444_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_555555_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_777620_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_777777_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jquery\jquery-ui-1.12.0\index.html" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.js" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.min.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.min.js" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.structure.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.structure.min.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.min.css" />
+    <Content Include="jquery\jquery-ui-1.12.0\LICENSE.txt" />
     <Content Include="jquery\zTree\3.5\zTree_example1.aspx" />
     <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />
@@ -1380,6 +1398,7 @@
     <Content Include="jquery\jquery-1.9.1.min.map" />
     <Content Include="store.js\Changelog" />
     <Content Include="store.js\LICENSE" />
+    <Content Include="jquery\jquery-ui-1.12.0\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
