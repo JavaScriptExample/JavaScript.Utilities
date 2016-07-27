@@ -357,7 +357,6 @@ whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\
                 };
             }
         },
-
         loadScript: function (url, callback) {
             /// <summary>
             /// 动态加载js
