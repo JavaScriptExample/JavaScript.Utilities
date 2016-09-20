@@ -218,6 +218,7 @@
     <Content Include="jquery\datatables\1.10.2\dataTables_example3.aspx" />
     <Content Include="jquery\datatables\1.10.2\dataTables_example4.aspx" />
     <Content Include="jquery\datatables\1.10.2\dataTables_example5.aspx" />
+    <Content Include="jquery\datatables\1.10.2\dataTables_example6.aspx" />
     <Content Include="jquery\datatables\1.10.2\examples\advanced_init\column_render.html" />
     <Content Include="jquery\datatables\1.10.2\examples\advanced_init\complex_header.html" />
     <Content Include="jquery\datatables\1.10.2\examples\advanced_init\defaults.html" />
@@ -761,11 +762,21 @@
     <Content Include="BackHandler\BaseHandler.ashx" />
     <Content Include="data.json" />
     <Content Include="BackHandler\QueryHandler.ashx" />
+    <Content Include="App_Readme\Handlebarsjs_README.md" />
+    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="jquery\jquery-1.9.1.js" />
     <Content Include="jquery\jquery-1.9.1.min.js" />
     <Content Include="jquery\json2.js" />
     <Content Include="jquery\json2.min.js" />
+    <Content Include="Scripts\handlebars.amd.js" />
+    <Content Include="Scripts\handlebars.amd.min.js" />
+    <Content Include="Scripts\handlebars.js" />
+    <Content Include="Scripts\handlebars.min.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
+    <Content Include="Scripts\handlebars.runtime.js" />
+    <Content Include="Scripts\handlebars.runtime.min.js" />
     <Content Include="store.js\json.js" />
     <Content Include="store.js\store+json2.min.js" />
     <Content Include="store.js\store.js" />
@@ -1341,6 +1352,13 @@
     <Compile Include="jquery\datatables\1.10.2\dataTables_example5.aspx.designer.cs">
       <DependentUpon>dataTables_example5.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jquery\datatables\1.10.2\dataTables_example6.aspx.cs">
+      <DependentUpon>dataTables_example6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jquery\datatables\1.10.2\dataTables_example6.aspx.designer.cs">
+      <DependentUpon>dataTables_example6.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jquery\zTree\3.5\zTree_example1.aspx.cs">
       <DependentUpon>zTree_example1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1414,9 +1432,7 @@
     <Content Include="jquery\zTree\3.5\zTree_v3-master\README.md" />
     <Content Include="jquery\zTree\3.5\zTree_v3-master\zTree.v3.jquery.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
