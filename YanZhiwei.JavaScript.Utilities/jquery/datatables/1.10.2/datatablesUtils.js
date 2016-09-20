@@ -435,7 +435,7 @@
                 _rows = new Object();
             _table.rows().flatten().each(function (idx, i) {
                 var _data = _table.row(idx).data();
-                if (_data[key] === value) {
+                if (_data[key] == value) {
                     _rows = _table.row(idx);
                     return false;
                 }
@@ -472,10 +472,10 @@
             _table = $('#' + _id).DataTable();
             _table.rows().flatten().each(function (idx, i) {
                 var _data = _table.row(idx).data();
-                if (_data != undefined && _data[key] === value) {
+                if (_data != undefined && _data[key] == value) {
                     var _row = _table.row(idx);
                     _table.row(_row).remove().draw(false);
-                    //  return false;//跳出循环
+                    return false;//跳出循环
                 }
             });
         },
@@ -491,7 +491,7 @@
             var _allDatas = _table.rows().data();
             for (var i = 0; i < _allDatas.length; i++) {
                 var _data = _allDatas[i];
-                if (_data[key] === value) {
+                if (_data[key] == value) {
                     _rowIndex = i;
                     break;
                 }
