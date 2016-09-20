@@ -93,14 +93,17 @@
                    "bSortable": false,
                    "width": "25%",
                    "mRender": function (data, type, row) {
-                       var context =
-                        {
-                            func: [
-                                { "name": "  编辑 ", "fn": "edit(\'" + row.name + "\',\'" + row.ip + "\',\'" + row.group + "\')", "type": "primary" },
-                                { "name": "删除", "fn": "del(\'" + row.name + "\',\'" + row.ip + "\',\'" + row.group + "\')", "type": "danger" }
-                            ]
-                        };
-                       var html = template(context);//匹配内容
+                       //var context =
+                       // {
+                       //     func: [
+                       //         { "name": "  编辑 ", "fn": "edit(\'" + row.name + "\',\'" + row.ip + "\',\'" + row.group + "\')", "type": "primary" },
+                       //         { "name": "删除", "fn": "del(\'" + row.name + "\',\'" + row.ip + "\',\'" + row.group + "\')", "type": "danger" }
+                       //     ]
+                       // };
+                       //var html = template(context);//匹配内容
+                       //return html;
+                       var html = "<button type='button' class='btn btn-primary btn-sm' onclick=edit('" + row.name + "','" + row.ip + "','" + row.group + "')>  编辑 </button>\n" +
+                                   "<button type='button' class='btn btn-danger btn-sm' onclick='del('" + row.name + "','" + row.ip + "','" + row.group + "')>删除</button>";
                        return html;
                    }
                }
