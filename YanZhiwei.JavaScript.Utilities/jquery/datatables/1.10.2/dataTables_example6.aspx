@@ -19,64 +19,54 @@
     <script type="text/javascript">
         var data = [
     {
-        "name": "rfswitch1",
+        "name": "1",
         "ip": "192.168.1.1",
         "group": "A"
     },
    {
-       "name": "rfswitch2",
-       "ip": "192.168.1.1",
+       "name": "2",
+       "ip": "192.168.1.2",
        "group": "B"
    },
 	{
-	    "name": "rfswitch3",
-	    "ip": "192.168.1.2",
-	    "group": "C"
-	},
-	{
-	    "name": "rfswitch4",
+	    "name": "3",
 	    "ip": "192.168.1.3",
-	    "group": "D"
+	    "group": "C"
 	},
 	{
-	    "name": "rfswitch5",
+	    "name": "4",
 	    "ip": "192.168.1.4",
-	    "group": "A"
+	    "group": "D"
 	},
 	{
-	    "name": "rfswitch6",
+	    "name": "5",
 	    "ip": "192.168.1.5",
-	    "group": "B"
-	},
-	{
-	    "name": "rfswitch7",
-	    "ip": "192.168.1.6",
-	    "group": "C"
-	},
-	{
-	    "name": "rfswitch8",
-	    "ip": "192.168.1.7",
-	    "group": "D"
-	},
-	{
-	    "name": "rfswitch9",
-	    "ip": "192.168.1.8",
 	    "group": "A"
 	},
 	{
-	    "name": "rfswitch10",
-	    "ip": "192.168.1.9",
+	    "name": "6",
+	    "ip": "192.168.1.6",
 	    "group": "B"
 	},
 	{
-	    "name": "rfswitch11",
-	    "ip": "192.168.1.10",
+	    "name": "7",
+	    "ip": "192.168.1.7",
 	    "group": "C"
 	},
 	{
-	    "name": "rfswitch12",
-	    "ip": "192.168.1.11",
+	    "name": "8",
+	    "ip": "192.168.1.8",
 	    "group": "D"
+	},
+	{
+	    "name": "9",
+	    "ip": "192.168.1.9",
+	    "group": "A"
+	},
+	{
+	    "name": "10",
+	    "ip": "192.168.1.10",
+	    "group": "B"
 	}
         ];
         $(document).ready(function () {
@@ -90,7 +80,6 @@
                {
                    "title": "编辑",
                    "mData": null,
-                   "bSortable": false,
                    "width": "25%",
                    "mRender": function (data, type, row) {
                        //var context =
@@ -102,46 +91,49 @@
                        // };
                        //var html = template(context);//匹配内容
                        //return html;
-                       var html = "<button type='button' class='btn btn-primary btn-sm' onclick=edit('" + row.name + "','" + row.ip + "','" + row.group + "')>  编辑 </button>\n" +
-                                   "<button type='button' class='btn btn-danger btn-sm' onclick='del('" + row.name + "','" + row.ip + "','" + row.group + "')>删除</button>";
+                       var html = "<button type='button' class='btn btn-primary btn-sm' onclick=edit(" + JSON.stringify(row) + ")>  编辑 </button>\n" +
+                                   "<button type='button' class='btn btn-danger btn-sm' onclick=del('" + row.name + "','" + row.ip + "','" + row.group + "')>删除</button>";
                        return html;
                    }
                }
             ];
 
-            $('#tableLog').executeQuery(_columns);
+            $('#tableLog').executeQuery(_columns, [[1, "desc"]], 10);
             $('#tableLog').addJson(data);
         });
 
-        function edit(name, ip, group) {
+        function edit(jsonItem) {
             //console.log(name);
             editFlag = true;
             $("#myModalLabel").text("Edit");
-            $("#name").val(name);//为什么也有作用
-            $("#ip").val(ip).attr("disabled", true);
-            $("#group").val(group);
+            $("#name").val(jsonItem.name);//为什么也有作用
+            $("#ip").val(jsonItem.ip).attr("disabled", true);
+            $("#group").val(jsonItem.group);
             //应该获得数据也就是要进行更新处理
             $("#myModal").modal("show");
         }
         function del(name, ip, group) {
             //这个地方也好弄，可以获取数据
-            alert(name + ip + group);
+            $('#tableLog').dataTable().deleteRowByParam('ip', ip);
         }
 
         function save() {
             var flag = $("#myModalLabel").text();
-            //var flag = Edit;
-            if (flag == "Edit") {
-                //get input and ajax
-                alert("Edit");
-                return;
-            }
-            alert("add");//get input and ajax
+            var _name = $("#name").val();
             var addJson = {
-                "name": $("#name").val(),
+                "name": _name,
                 "ip": $("#ip").val(),
-                "group": $("#group").val(),
+                "group": $("#group").val() + "abb",
             };
+            if (flag == "Edit") {
+                var _table = $('#tableLog').dataTable();
+                var _rowIndex = _table.getRowIndexByParam('ip', $("#ip").val());
+                _table.deleteRowByParam('ip', $("#ip").val());
+                _table.addJson(addJson);
+                $('#myModal').modal('hide');
+                console.log("_rowIndex:" + _rowIndex);
+            }
+
             return;
         }
     </script>
@@ -149,6 +141,10 @@
 <body>
     <div class="container">
         <table id="tableLog" class="table table-striped table-bordered"></table>
+        <div class="row">
+
+            <button type="button" class="btn blue" id="btnAddItem">增加  </button>
+        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -170,11 +166,10 @@
                     <div class="form-group">
                         <input type="text" class="form-control" id="group" placeholder="please input rfswitch group" />
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-                    <button type="button" class="btn btn-primary" id="save">save</button>
+                    <button type="button" class="btn btn-primary" id="save" onclick="save()">save</button>
                 </div>
             </div>
         </div>

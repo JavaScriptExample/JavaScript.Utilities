@@ -241,7 +241,7 @@
             /// </summary>
             /// <param name="rowIndex">行索引</param>
             /// <param name="rowData">新的行数据</param>
-            $(this).DataTable().row(rowIndex).data(rowData).draw();
+            $(this).DataTable().row(rowIndex).invalidate().data(rowData).draw(false);
         },
         deleteRowByIndex: function (rowIndex) {
             /// <summary>
