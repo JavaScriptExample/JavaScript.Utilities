@@ -427,9 +427,11 @@
     <Content Include="jquery\ion.rangeSlider-2.1.4\img\sprite-skin-modern.png" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\img\sprite-skin-nice.png" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\img\sprite-skin-simple.png" />
+    <Content Include="jquery\ion.rangeSlider-2.1.4\ion.rangeSlider_demo.aspx" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\ion-rangeSlider\ion.rangeSlider.js" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\ion-rangeSlider\ion.rangeSlider.min.js" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\vendor\jquery-1.12.3.min.js" />
+    <Content Include="jquery\ion.rangeSlider-2.1.4\rangeSlider.js" />
     <Content Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx" />
     <Content Include="jquery\jquery-ui-1.12.0\AUTHORS.txt" />
     <Content Include="jquery\jquery-ui-1.12.0\external\jquery\jquery.js" />
@@ -736,6 +738,13 @@
     </Compile>
     <Compile Include="jquery\datatables-1.10.2\dataTables_demo.aspx.designer.cs">
       <DependentUpon>dataTables_demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jquery\ion.rangeSlider-2.1.4\ion.rangeSlider_demo.aspx.cs">
+      <DependentUpon>ion.rangeSlider_demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jquery\ion.rangeSlider-2.1.4\ion.rangeSlider_demo.aspx.designer.cs">
+      <DependentUpon>ion.rangeSlider_demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx.cs">
       <DependentUpon>jqGrid_demo.aspx</DependentUpon>
