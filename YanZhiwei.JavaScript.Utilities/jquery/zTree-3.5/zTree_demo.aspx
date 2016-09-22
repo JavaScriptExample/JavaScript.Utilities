@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="zTree_example1.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.zTree._3._5.zTree_example1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="zTree_demo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.zTree._3._5.zTree_example1" %>
 
 <!DOCTYPE html>
 
@@ -91,7 +91,7 @@
         }
         function updateIcon() {
             var _zTreeObj = $.fn.zTree.getZTreeObj('treeDemo');
-            _zTreeObj.updateIcon('id', 31, 'zTree-3.5/cab_0_0_0.png');
+            _zTreeObj.updateIcon('id', 31, '../../Content/Images/cab_0_0_0.png');
         }
         function updateFont() {
             var _zTreeObj = $.fn.zTree.getZTreeObj('treeDemo');
@@ -128,7 +128,6 @@
                 console.log(node.name);
                 return false;
             })
-
         }
         function testDemo() {
             alert('test');

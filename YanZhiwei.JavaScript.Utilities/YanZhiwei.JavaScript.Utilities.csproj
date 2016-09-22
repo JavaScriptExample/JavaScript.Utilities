@@ -449,7 +449,7 @@
     <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.css" />
     <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.min.css" />
     <Content Include="jquery\jquery-ui-1.12.0\LICENSE.txt" />
-    <Content Include="jquery\zTree-3.5\zTree_example1.aspx" />
+    <Content Include="jquery\zTree-3.5\zTree_demo.aspx" />
     <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />
     <Content Include="JsDemo2.aspx" />
@@ -637,7 +637,7 @@
     <Content Include="userData.js" />
     <Content Include="userDataTest.aspx" />
     <Content Include="Web.config" />
-    <Content Include="jquery\zTree-3.5\cab_0_0_0.png">
+    <Content Include="Content\Images\cab_0_0_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="jquery\zTree-3.5\zTreeUtils.js" />
@@ -744,12 +744,12 @@
     <Compile Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx.designer.cs">
       <DependentUpon>jqGrid_demo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="jquery\zTree-3.5\zTree_example1.aspx.cs">
-      <DependentUpon>zTree_example1.aspx</DependentUpon>
+    <Compile Include="jquery\zTree-3.5\zTree_demo.aspx.cs">
+      <DependentUpon>zTree_demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jquery\zTree-3.5\zTree_example1.aspx.designer.cs">
-      <DependentUpon>zTree_example1.aspx</DependentUpon>
+    <Compile Include="jquery\zTree-3.5\zTree_demo.aspx.designer.cs">
+      <DependentUpon>zTree_demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="jqUtilsDemo.aspx.cs">
       <DependentUpon>jqUtilsDemo.aspx</DependentUpon>
