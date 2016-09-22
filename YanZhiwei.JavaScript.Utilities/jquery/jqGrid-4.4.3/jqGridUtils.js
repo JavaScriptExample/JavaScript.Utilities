@@ -1,4 +1,6 @@
-﻿/// <reference path="jquery.jqGrid-4.4.3/js/jquery.jqGrid.src.js" />
+﻿/// <reference path="js/jquery.jqGrid.src.js" />
+/// <reference path="../jquery-1.9.1.js" />
+
 $.jgrid.extend({
     initExt: function (height, width, colNames, colModel, caption) {
         /// <summary>
