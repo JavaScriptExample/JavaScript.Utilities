@@ -430,6 +430,7 @@
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\ion-rangeSlider\ion.rangeSlider.js" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\ion-rangeSlider\ion.rangeSlider.min.js" />
     <Content Include="jquery\ion.rangeSlider-2.1.4\js\vendor\jquery-1.12.3.min.js" />
+    <Content Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx" />
     <Content Include="jquery\jquery-ui-1.12.0\AUTHORS.txt" />
     <Content Include="jquery\jquery-ui-1.12.0\external\jquery\jquery.js" />
     <Content Include="jquery\jquery-ui-1.12.0\images\ui-icons_444444_256x240.png" />
@@ -463,7 +464,6 @@
     <Content Include="html5\html5Utils.html" />
     <Content Include="html5\html5Utils.js" />
     <Content Include="jquery\jqGrid-4.4.3\jqGridUtils.js" />
-    <Content Include="jquery\jqGrid-4.4.3\jqGrid.html" />
     <Content Include="jquery\jqGrid-4.4.3\css\ellipsis-xbl.xml" />
     <Content Include="jquery\jqGrid-4.4.3\css\ui.jqgrid.css" />
     <Content Include="jquery\jqGrid-4.4.3\js\Changes.txt" />
@@ -1082,6 +1082,13 @@
     </Compile>
     <Compile Include="jquery\datatables-1.10.2\dataTables_demo.aspx.designer.cs">
       <DependentUpon>dataTables_demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx.cs">
+      <DependentUpon>jqGrid_demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jquery\jqGrid-4.4.3\jqGrid_demo.aspx.designer.cs">
+      <DependentUpon>jqGrid_demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="jquery\zTree\3.5\zTree_example1.aspx.cs">
       <DependentUpon>zTree_example1.aspx</DependentUpon>

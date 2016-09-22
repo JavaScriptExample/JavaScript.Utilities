@@ -1,18 +1,22 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>jqGrid 4.4.3 Demo</title>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jqGrid_demo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.jqGrid_4._4._3.jqGrid_demo" %>
 
-    <link href="../../jquery-ui-1.12.0/jquery-ui.min.css" rel="stylesheet" />
-    <link href="../../jqGrid-4.4.3/css/ui.jqgrid.css" rel="stylesheet" />
-    <script src="../../jquery-1.9.1.js"></script>
-    <script src="../../jquery-ui-1.12.0/jquery-ui.js"></script>
-    <script src="../../jqGrid-4.4.3/js/jquery.jqGrid.min.js"></script>
-    <script src="../../jqGrid-4.4.3/src/i18n/grid.locale-cn.js"></script>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../jquery-ui-1.12.0/jquery-ui.min.css" rel="stylesheet" />
+    <link href="css/ui.jqgrid.css" rel="stylesheet" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="../jquery-ui-1.12.0/jquery-ui.min.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
     <script src="jqGridUtils.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function initBase() {
+        function initExt() {
+            /// <summary>
+            /// 扩展初始化
+            /// </summary>
             var colNames = ['序号', '箱名称', '回路名称', '启用', '回路控制(DO)', '回路(DI)', '是否上锁', '运行方式'];
             var colModel = [
                      { name: 'CID', index: 'CID', width: 120 },
@@ -77,13 +81,13 @@
 <body>
     <table id="ctuStatus"></table>
     <br />
-    <input id="Button1" type="button" value="initBase" onclick="initBase()" />
-    <input id="Button2" type="button" value="updateBlinkRow" onclick="updateBlinkRow()" />
-    <input id="Button3" type="button" value="highlightRow" onclick="highlightRow()" />
-    <input id="Button4" type="button" value="getRowDataByColNameValue" onclick="getRowDataByColNameValue()" />
-    <input id="Button5" type="button" value="getRowIndex" onclick="getRowIndex()" />
-    <input id="Button6" type="button" value="getCellIndex" onclick="getCellIndex()" />
-    <input id="Button7" type="button" value="blinkRow" onclick="blinkRow()" />
-    <input id="Button8" type="button" value="blinkCell" onclick="blinkCell()" />
+    <input id="Button1" type="button" value="initExt" onclick="initExt()" /><br />
+    <input id="Button2" type="button" value="updateBlinkRow" onclick="updateBlinkRow()" /><br />
+    <input id="Button3" type="button" value="highlightRow" onclick="highlightRow()" /><br />
+    <input id="Button4" type="button" value="getRowDataByColNameValue" onclick="getRowDataByColNameValue()" /><br />
+    <input id="Button5" type="button" value="getRowIndex" onclick="getRowIndex()" /><br />
+    <input id="Button6" type="button" value="getCellIndex" onclick="getCellIndex()" /><br />
+    <input id="Button7" type="button" value="blinkRow" onclick="blinkRow()" /><br />
+    <input id="Button8" type="button" value="blinkCell" onclick="blinkCell()" /><br />
 </body>
 </html>
