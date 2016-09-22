@@ -1,17 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jquery-dataTables_demo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.datatables_1._10._2.jquery_dataTables_demo" %>
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>datatables 1.10.2</title>
-    <link href="media/css/jquery.dataTables.css" rel="stylesheet" />
-    <link href="../../jquery-ui-1.12.0/jquery-ui.min.css" rel="stylesheet" />
-    <script src="../../../jsUtils.js" type="text/javascript"></script>
-    <script src="../../jquery-1.9.1.js" type="text/javascript"></script>
-    <script src="../../jquery-ui-1.12.0/jquery-ui.min.js"></script>
-    <script src="../../../jqUtils.js" type="text/javascript"></script>
-    <script src="media/js/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="datatablesUtils.js" type="text/javascript"></script>
-    <script src="../../json2.js" type="text/javascript"></script>
+    <title></title>
+    <link href="media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="../jquery-ui-1.12.0/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../jquery-1.9.1.js"></script>
+    <script src="../jquery-ui-1.12.0/jquery-ui.js"></script>
+    <script src="media/js/jquery.dataTables.js"></script>
+    <script src="../../jsUtils.js"></script>
+    <script src="datatablesUtils.js"></script>
     <style type="text/css">
         /*table.dataTable tbody tr.selected {
             background-color: lightgreen;
@@ -51,11 +52,14 @@
 
         });
         function AddJson() {
-
-            var _jsonObj = [{ "time": "2015-10-11", "log": "test", "status": "正常" },
-           { "time": "2015-10-12", "log": "test", "status": "正常" },
-           { "time": "2015-10-13", "log": "test", "status": "正常" }
-            ];
+            /// <summary>
+            /// 添加JSON数据
+            /// </summary>
+            var _jsonObj =
+                [{ "time": "2015-10-11", "log": "test", "status": "正常" },
+                 { "time": "2015-10-12", "log": "test", "status": "正常" },
+                 { "time": "2015-10-13", "log": "test", "status": "正常" }
+                ];
 
             $('#tableLog').dataTable().addJson(_jsonObj);
 
@@ -63,72 +67,103 @@
             //$('#tableLog').dataTable().addJson(_jsonString);
         }
         function RowClick() {
+            /// <summary>
+            /// 行选中事件处理
+            /// </summary>
             $('#tableLog').dataTable().rowClickEvent(function (rowData) {
-
                 alert(rowData.time);
             });
-
         }
         function HightSingleRow() {
+            /// <summary>
+            /// 单行高亮选中
+            /// </summary>
             $('#tableLog').dataTable().hightSingleRow();
 
         }
         function HightMutilRow() {
-
+            /// <summary>
+            /// 多行高亮选中
+            /// </summary>
             $('#tableLog').dataTable().hightMutilRow();
         }
         function getSelectedRowIndex() {
+            /// <summary>
+            /// 获取选中行索引
+            /// </summary>
             var _selectedIndex = $('#tableLog').dataTable().getSelectedRowIndex();
             alert(_selectedIndex);
         }
         function getSelectedRowsData() {
+            /// <summary>
+            /// 获取选中行数据
+            /// </summary>
             var _selectedData = $('#tableLog').dataTable().getSelectedRowsData();
             alert(_selectedData[0].time);
         }
         function updateRowByIndex() {
+            /// <summary>
+            /// 按照索引更新数据
+            /// </summary>
             var data = { "time": "2015-10-8", "log": " update test", "status": "正常" };
             $('#tableLog').dataTable().updateRowByIndex(0, data);
         }
         function deleteRowByIndex() {
+            /// <summary>
+            /// 按照索引删除数据
+            /// </summary>
             $('#tableLog').dataTable().deleteRowByIndex(0);
         }
         function getAllRows() {
+            /// <summary>
+            /// 获取全行数据
+            /// </summary>
             var _allRowsData = $('#tableLog').dataTable().getAllRows();
             alert(_allRowsData[0].time);
         }
         function getRowCount() {
+            /// <summary>
+            /// 获取行数
+            /// </summary>
             var _rowCount = $('#tableLog').dataTable().getRowCount();
             alert(_rowCount);
         }
         function foreach() {
+            /// <summary>
+            /// 遍历行
+            /// </summary>
             var table = $('#tableLog').dataTable();
             table.foreach(function (data) {
-                console.log(data.time);
+                alert(data.time);
             })
         }
         function getRowByParam() {
-            var table = $('#tableLog2').dataTable();
+            /// <summary>
+            /// 根据参数查询行
+            /// </summary>
+            var table = $('#tableLog').dataTable();
             var _row = table.getRowByParam('time', '2015-10-11');
-            _row.data().time = '2015-10-22';
+            alert(_row.data().time);
         }
         function deleteRowByParam() {
+            /// <summary>
+            /// 根据参数删除行
+            /// </summary>
             var table = $('#tableLog').dataTable();
             table.deleteRowByParam('time', '2015-10-11');
         }
         function getRowIndexByParam() {
+            /// <summary>
+            /// 根据参数获取索引
+            /// </summary>
             var table = $('#tableLog').dataTable();
-            var _rowIndex = table.getRowIndexByParam('time', '2015-10-13');
-            if (_rowIndex >= 0) {
-                table.updateRowByIndex(_rowIndex, { "time": "2015-10-22", "log": "test", "status": "不正常" });
-                var oTable = $('#tableLog').dataTable();
-                oTable.$('tr').tooltip({
-                    "delay": 0,
-                    "track": true,
-                    "fade": 250
-                });
-            }
+            var _rowIndex = table.getRowIndexByParam('time', '2015-10-11');
+            alert(_rowIndex);
         }
         function getRowHtmlByParam() {
+            /// <summary>
+            /// 获取行HRML元素根据参数
+            /// </summary>
             var table = $('#tableLog').dataTable();
             var _row = table.getRowHtmlByParam('time', '2015-10-11');
             $(_row).css("background-color", "red");
@@ -138,6 +173,9 @@
             }, 2000);
         }
         function addRowTooltip() {
+            /// <summary>
+            /// 添加行Tooltip
+            /// </summary>
             $('#tableLog tbody tr').each(function (i, row) {
                 var sTitle;
                 var nTds = $('td', this);
@@ -158,23 +196,23 @@
     </script>
 </head>
 <body>
-    <table width="80%" id="tableLog" cellspacing="0" ></table>
-    <input type="button" value="addJson" onclick="AddJson()" />
-    <input type="button" value="rowClick" onclick="RowClick()" />
-    <input type="button" value="hightSingleRow" onclick="HightSingleRow()" />
-    <input type="button" value="hightMutilRow" onclick="HightMutilRow()" />
-    <input type="button" value="getSelectedRowsData" onclick="getSelectedRowsData()" />
-    <input type="button" value="getSelectedRowIndex" onclick="getSelectedRowIndex()" />
-    <input type="button" value="updateRowByIndex" onclick="updateRowByIndex()" />
-    <input type="button" value="deleteRowByIndex" onclick="deleteRowByIndex()" />
-    <input type="button" value="clearAllRows" onclick="clearAllRows()" />
-    <input type="button" value="getAllRows" onclick="getAllRows()" />
-    <input type="button" value="getRowCount" onclick="getRowCount()" />
-    <input type="button" value="foreach" onclick="foreach()" />
-    <input type="button" value="getRowByParam" onclick="getRowByParam()" />
-    <input type="button" value="getRowIndexByParam" onclick="getRowIndexByParam()" />
-    <input type="button" value="deleteRowByParam" onclick="deleteRowByParam()" />
-    <input type="button" value="getRowHtmlByParam" onclick="getRowHtmlByParam()" />
-    <input type="button" value="addRowTooltip" onclick="addRowTooltip()" />
+    <table id="tableLog"></table>
+    <input type="button" value="addJson" onclick="AddJson()" /><br />
+    <input type="button" value="rowClick" onclick="RowClick()" /><br />
+    <input type="button" value="hightSingleRow" onclick="HightSingleRow()" /><br />
+    <input type="button" value="hightMutilRow" onclick="HightMutilRow()" /><br />
+    <input type="button" value="getSelectedRowsData" onclick="getSelectedRowsData()" /><br />
+    <input type="button" value="getSelectedRowIndex" onclick="getSelectedRowIndex()" /><br />
+    <input type="button" value="updateRowByIndex" onclick="updateRowByIndex()" /><br />
+    <input type="button" value="deleteRowByIndex" onclick="deleteRowByIndex()" /><br />
+    <input type="button" value="clearAllRows" onclick="clearAllRows()" /><br />
+    <input type="button" value="getAllRows" onclick="getAllRows()" /><br />
+    <input type="button" value="getRowCount" onclick="getRowCount()" /><br />
+    <input type="button" value="foreach" onclick="foreach()" /><br />
+    <input type="button" value="getRowByParam" onclick="getRowByParam()" /><br />
+    <input type="button" value="getRowIndexByParam" onclick="getRowIndexByParam()" /><br />
+    <input type="button" value="deleteRowByParam" onclick="deleteRowByParam()" /><br />
+    <input type="button" value="getRowHtmlByParam" onclick="getRowHtmlByParam()" /><br />
+    <input type="button" value="addRowTooltip" onclick="addRowTooltip()" /><br />
 </body>
 </html>

@@ -217,14 +217,9 @@
     <Content Include="Global.asax" />
     <Content Include="jquery\datatables-1.10.2\all.min.js" />
     <Content Include="jquery\datatables-1.10.2\arrays.txt" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example1.aspx" />
-    <Content Include="jquery\datatables-1.10.2\datatables.html" />
     <Content Include="jquery\datatables-1.10.2\datatablesUtils.js" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example2.aspx" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example3.aspx" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example4.aspx" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example5.aspx" />
-    <Content Include="jquery\datatables-1.10.2\dataTables_example6.aspx" />
+    <Content Include="jquery\datatables-1.10.2\dataTables_executePageQuery.aspx" />
+    <Content Include="jquery\datatables-1.10.2\dataTables_curd.aspx" />
     <Content Include="jquery\datatables-1.10.2\extensions\AutoFill\css\dataTables.autoFill.css" />
     <Content Include="jquery\datatables-1.10.2\extensions\AutoFill\css\dataTables.autoFill.min.css" />
     <Content Include="jquery\datatables-1.10.2\extensions\AutoFill\examples\columns.html" />
@@ -394,6 +389,7 @@
     <Content Include="jquery\datatables-1.10.2\extensions\TableTools\swf\copy_csv_xls.swf" />
     <Content Include="jquery\datatables-1.10.2\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
     <Content Include="jquery\datatables-1.10.2\ids-arrays.txt" />
+    <Content Include="jquery\datatables-1.10.2\jquery-dataTables_demo.aspx" />
     <Content Include="jquery\datatables-1.10.2\license.txt" />
     <Content Include="jquery\datatables-1.10.2\media\css\jquery.dataTables.css" />
     <Content Include="jquery\datatables-1.10.2\media\css\jquery.dataTables.min.css" />
@@ -1090,47 +1086,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example1.aspx.cs">
-      <DependentUpon>dataTables_example1.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\dataTables_executePageQuery.aspx.cs">
+      <DependentUpon>dataTables_executePageQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example1.aspx.designer.cs">
-      <DependentUpon>dataTables_example1.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\dataTables_executePageQuery.aspx.designer.cs">
+      <DependentUpon>dataTables_executePageQuery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example2.aspx.cs">
-      <DependentUpon>dataTables_example2.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\dataTables_curd.aspx.cs">
+      <DependentUpon>dataTables_curd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example2.aspx.designer.cs">
-      <DependentUpon>dataTables_example2.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\dataTables_curd.aspx.designer.cs">
+      <DependentUpon>dataTables_curd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example3.aspx.cs">
-      <DependentUpon>dataTables_example3.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\jquery-dataTables_demo.aspx.cs">
+      <DependentUpon>jquery-dataTables_demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example3.aspx.designer.cs">
-      <DependentUpon>dataTables_example3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example4.aspx.cs">
-      <DependentUpon>dataTables_example4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example4.aspx.designer.cs">
-      <DependentUpon>dataTables_example4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example5.aspx.cs">
-      <DependentUpon>dataTables_example5.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example5.aspx.designer.cs">
-      <DependentUpon>dataTables_example5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example6.aspx.cs">
-      <DependentUpon>dataTables_example6.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="jquery\datatables-1.10.2\dataTables_example6.aspx.designer.cs">
-      <DependentUpon>dataTables_example6.aspx</DependentUpon>
+    <Compile Include="jquery\datatables-1.10.2\jquery-dataTables_demo.aspx.designer.cs">
+      <DependentUpon>jquery-dataTables_demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="jquery\zTree\3.5\zTree_example1.aspx.cs">
       <DependentUpon>zTree_example1.aspx</DependentUpon>

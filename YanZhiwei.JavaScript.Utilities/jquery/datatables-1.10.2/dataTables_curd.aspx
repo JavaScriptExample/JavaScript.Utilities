@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dataTables_example6.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.datatables._1._10._2.dataTables_example6" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dataTables_curd.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.datatables._1._10._2.dataTables_curd" %>
 
 <!DOCTYPE html>
 
@@ -103,17 +103,14 @@
         });
 
         function edit(jsonItem) {
-            //console.log(name);
             editFlag = true;
             $("#myModalLabel").text("Edit");
             $("#name").val(jsonItem.name);//为什么也有作用
             $("#ip").val(jsonItem.ip).attr("disabled", true);
             $("#group").val(jsonItem.group);
-            //应该获得数据也就是要进行更新处理
             $("#myModal").modal("show");
         }
         function del(name, ip, group) {
-            //这个地方也好弄，可以获取数据
             $('#tableLog').dataTable().deleteRowByParam('ip', ip);
         }
 
