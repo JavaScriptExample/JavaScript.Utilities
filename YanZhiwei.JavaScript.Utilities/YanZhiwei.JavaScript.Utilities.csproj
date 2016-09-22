@@ -94,6 +94,7 @@
     <Content Include="bs\v3\bootbox\bootbox.js" />
     <Content Include="bs\v3\bootbox\bootbox.min.js" />
     <Content Include="bs\v3\bootbox\bootboxUtils.js" />
+    <Content Include="bs\v3\bootstrap-touchspinDemo.aspx" />
     <Content Include="bs\v3\bootstrap-touchspin\bootstrap.touchspin.css" />
     <Content Include="bs\v3\bootstrap-touchspin\bootstrap.touchspin.js" />
     <Content Include="bs\v3\bootstrap-touchspin\bootstrap.touchspin.min.css" />
@@ -1299,6 +1300,13 @@
     </Compile>
     <Compile Include="bs\v3\bootboxDemo.aspx.designer.cs">
       <DependentUpon>bootboxDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bs\v3\bootstrap-touchspinDemo.aspx.cs">
+      <DependentUpon>bootstrap-touchspinDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bs\v3\bootstrap-touchspinDemo.aspx.designer.cs">
+      <DependentUpon>bootstrap-touchspinDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="bs\v3\bootstrap-validatorDemo.aspx.cs">
       <DependentUpon>bootstrap-validatorDemo.aspx</DependentUpon>
