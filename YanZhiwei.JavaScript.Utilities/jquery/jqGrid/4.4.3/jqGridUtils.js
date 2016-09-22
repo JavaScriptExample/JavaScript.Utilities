@@ -1,6 +1,6 @@
 ﻿/// <reference path="jquery.jqGrid-4.4.3/js/jquery.jqGrid.src.js" />
 $.jgrid.extend({
-    initBase: function (height, width, colNames, colModel, caption) {
+    initExt: function (height, width, colNames, colModel, caption) {
         /// <summary>
         /// 初始化基本的本地数据jqGird
         /// </summary>

@@ -77,8 +77,8 @@
             }
             ];
 
-            $.fn.zTree.initBase($("#treeDemo"), setting, zNodes, true);
-
+            $.fn.zTree.initExt($("#treeDemo"), setting, zNodes, true);
+      
         });
         function onCheck(e, treeId, treeNode) {
             alert("onCheck " + treeNode.name);

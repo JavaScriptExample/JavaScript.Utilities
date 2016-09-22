@@ -13,7 +13,7 @@
             }
         }
     }
-    $.fn.zTree.initBase = function (obj, zSetting, zNodes, extend) {
+    $.fn.zTree.initExt = function (obj, zSetting, zNodes, extend) {
         /// <summary>
         /// Ztree初始化，加载扩展函数
         /// </summary>

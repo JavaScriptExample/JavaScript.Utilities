@@ -25,7 +25,7 @@
             ];
             var jqrid = $('#ctuStatus');
 
-            jqrid.initBase(300, 800, colNames, colModel, '测试');
+            jqrid.initExt(300, 800, colNames, colModel, '测试');
             for (var i = 0; i < 10; i++) {
                 var item = { CID: i, CCabName: '测试' + i, CChName: '回路' + i, CEnable: '可用', CDoValue: '打开', CDiValue: '打开', CIsLocked: '锁定', CRunType: '自主运行' };
                 jqrid.addRowData(i, item);
