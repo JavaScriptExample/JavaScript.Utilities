@@ -92,7 +92,6 @@
         function updateIcon() {
             var _zTreeObj = $.fn.zTree.getZTreeObj('treeDemo');
             _zTreeObj.updateIcon('id', 31, 'zTree-3.5/cab_0_0_0.png');
-
         }
         function updateFont() {
             var _zTreeObj = $.fn.zTree.getZTreeObj('treeDemo');
@@ -145,7 +144,7 @@
                     <ul id="treeDemo" class="ztree"></ul>
                 </div>
             </div>
-            
+
             <br />
             <input id="Button1" type="button" value="addMenu" onclick="addMenu()" /><br />
             <input id="Button2" type="button" value="selectNode" onclick="selectNode()" /><br />

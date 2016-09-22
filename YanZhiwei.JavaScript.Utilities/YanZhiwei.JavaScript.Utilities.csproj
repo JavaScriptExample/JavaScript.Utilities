@@ -637,7 +637,9 @@
     <Content Include="userData.js" />
     <Content Include="userDataTest.aspx" />
     <Content Include="Web.config" />
-    <Content Include="jquery\zTree-3.5\cab_0_0_0.png" />
+    <Content Include="jquery\zTree-3.5\cab_0_0_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="jquery\zTree-3.5\zTreeUtils.js" />
     <Content Include="jquery\zTree-3.5\css\zTreeStyle\img\diy\1_close.png" />
     <Content Include="jquery\zTree-3.5\css\zTreeStyle\img\diy\1_open.png" />
