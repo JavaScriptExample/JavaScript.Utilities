@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jquery-dataTables_demo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.datatables_1._10._2.jquery_dataTables_demo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dataTables_demo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.jquery.datatables_1._10._2.dataTables_demo" %>
 
 <!DOCTYPE html>
 

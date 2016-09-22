@@ -11,7 +11,7 @@ namespace YanZhiwei.JavaScript.Utilities.jquery.datatables_1._10._2
 {
 
 
-    public partial class jquery_dataTables_demo
+    public partial class dataTables_demo
     {
     }
 }
