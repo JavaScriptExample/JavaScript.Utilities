@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrapvalidatorDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrapvalidatorDemo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap-validatorDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrapvalidatorDemo" %>
 
 <!DOCTYPE html>
 
@@ -6,10 +6,10 @@
 <head runat="server">
     <title>bootstrapvalidator Demo</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="bootstrapvalidator/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="bootstrap-validator/css/bootstrapValidator.css" rel="stylesheet" />
     <script src="../../jquery/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="bootstrapvalidator/js/bootstrapValidator.min.js"></script>
+    <script src="bootstrap-validator/js/bootstrapValidator.js"></script>
     <script type="text/javascript">
 
         $(function () {
@@ -55,33 +55,6 @@
 
             });
         });
-        //$(function () {
-        //    $('form').bootstrapValidator({
-        //        message: 'This value is not valid',
-        //        feedbackIcons: {
-        //            valid: 'glyphicon glyphicon-ok',
-        //            invalid: 'glyphicon glyphicon-remove',
-        //            validating: 'glyphicon glyphicon-refresh'
-        //        },
-        //        fields: {
-        //            username: {
-        //                message: '用户名验证失败',
-        //                validators: {
-        //                    notEmpty: {
-        //                        message: '用户名不能为空'
-        //                    }
-        //                }
-        //            },
-        //            email: {
-        //                validators: {
-        //                    notEmpty: {
-        //                        message: '邮箱地址不能为空'
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    });
-        //});
     </script>
 </head>
 <body>
