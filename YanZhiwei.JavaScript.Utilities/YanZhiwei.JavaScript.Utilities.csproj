@@ -612,8 +612,6 @@
     <Content Include="BackHandler\BaseHandler.ashx" />
     <Content Include="data.json" />
     <Content Include="BackHandler\QueryHandler.ashx" />
-    <Content Include="App_Readme\Handlebarsjs_README.md" />
-    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <Content Include="bs\v3\bootstrap-touchspin\LICENSE.md" />
     <Content Include="bs\v3\bootstrap-touchspin\README.md" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
@@ -621,14 +619,6 @@
     <Content Include="jquery\jquery-1.9.1.min.js" />
     <Content Include="jquery\json2.js" />
     <Content Include="jquery\json2.min.js" />
-    <Content Include="Scripts\handlebars.amd.js" />
-    <Content Include="Scripts\handlebars.amd.min.js" />
-    <Content Include="Scripts\handlebars.js" />
-    <Content Include="Scripts\handlebars.min.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.js" />
-    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
-    <Content Include="Scripts\handlebars.runtime.js" />
-    <Content Include="Scripts\handlebars.runtime.min.js" />
     <Content Include="store.js\json.js" />
     <Content Include="store.js\store+json2.min.js" />
     <Content Include="store.js\store.js" />
