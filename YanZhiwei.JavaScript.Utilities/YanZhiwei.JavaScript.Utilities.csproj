@@ -455,7 +455,6 @@
     <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />
     <Content Include="JsDemo2.aspx" />
-    <Content Include="jsUtilsTest.html" />
     <Content Include="css3\ie-css3.htc" />
     <Content Include="googleMap\V3\gUtils.html" />
     <Content Include="googleMap\V3\gUtils.js" />
