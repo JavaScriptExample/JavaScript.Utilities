@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="modelDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.modelDemo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap_modelDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrap_modelDemo" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <script src="../../jquery/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../jquery/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {

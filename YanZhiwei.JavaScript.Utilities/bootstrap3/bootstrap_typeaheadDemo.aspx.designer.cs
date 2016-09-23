@@ -7,9 +7,13 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace YanZhiwei.JavaScript.Utilities.bs.v3 {
+namespace YanZhiwei.JavaScript.Utilities.bs.v3
+{
+
+
+    public partial class bootstrap_typeaheadDemo
+    {
     
     
-    public partial class modelDemo {
     }
 }

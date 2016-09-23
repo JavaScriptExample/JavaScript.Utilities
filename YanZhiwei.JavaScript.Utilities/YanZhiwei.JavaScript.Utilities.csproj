@@ -94,12 +94,12 @@
     <Content Include="bootstrap3\bootbox\bootbox.js" />
     <Content Include="bootstrap3\bootbox\bootbox.min.js" />
     <Content Include="bootstrap3\bootbox\bootboxUtils.js" />
-    <Content Include="bootstrap3\bootstrap-touchspinDemo.aspx" />
+    <Content Include="bootstrap3\bootstrap_touchspinDemo.aspx" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.css" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.js" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.min.css" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.min.js" />
-    <Content Include="bootstrap3\bootstrap-validatorDemo.aspx" />
+    <Content Include="bootstrap3\bootstrap_validatorDemo.aspx" />
     <Content Include="bootstrap3\bootstrap-validator\css\bootstrapValidator.css" />
     <Content Include="bootstrap3\bootstrap-validator\css\bootstrapValidator.min.css" />
     <Content Include="bootstrap3\bootstrap-validator\js\bootstrapValidator.js" />
@@ -197,9 +197,9 @@
     <Content Include="bootstrap3\js\bootstrap.js" />
     <Content Include="bootstrap3\js\bootstrap.min.js" />
     <Content Include="bootstrap3\js\npm.js" />
-    <Content Include="bootstrap3\modelDemo.aspx" />
+    <Content Include="bootstrap3\bootstrap_modelDemo.aspx" />
     <Content Include="bootstrap3\touchSpin.js" />
-    <Content Include="bootstrap3\typeaheadDemo.aspx" />
+    <Content Include="bootstrap3\bootstrap_typeaheadDemo.aspx" />
     <Content Include="bootstrap3\typeahead\handlebars.min.js" />
     <Content Include="bootstrap3\typeahead\typeahead.bundle.js" />
     <Content Include="bootstrap3\typeahead\typeahead.bundle.min.js" />
@@ -614,11 +614,21 @@
     <Content Include="BackHandler\QueryHandler.ashx" />
     <Content Include="bootstrap3\bootstrap-touchspin\LICENSE.md" />
     <Content Include="bootstrap3\bootstrap-touchspin\README.md" />
+    <Content Include="App_Readme\Handlebarsjs_README.md" />
+    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="jquery\jquery-1.9.1.js" />
     <Content Include="jquery\jquery-1.9.1.min.js" />
     <Content Include="jquery\json2.js" />
     <Content Include="jquery\json2.min.js" />
+    <Content Include="Scripts\handlebars.amd.js" />
+    <Content Include="Scripts\handlebars.amd.min.js" />
+    <Content Include="Scripts\handlebars.js" />
+    <Content Include="Scripts\handlebars.min.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
+    <Content Include="Scripts\handlebars.runtime.js" />
+    <Content Include="Scripts\handlebars.runtime.min.js" />
     <Content Include="store.js\json.js" />
     <Content Include="store.js\store+json2.min.js" />
     <Content Include="store.js\store.js" />
@@ -676,33 +686,33 @@
     <Compile Include="bootstrap3\bootboxDemo.aspx.designer.cs">
       <DependentUpon>bootboxDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="bootstrap3\bootstrap-touchspinDemo.aspx.cs">
-      <DependentUpon>bootstrap-touchspinDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_touchspinDemo.aspx.cs">
+      <DependentUpon>bootstrap_touchspinDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="bootstrap3\bootstrap-touchspinDemo.aspx.designer.cs">
-      <DependentUpon>bootstrap-touchspinDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_touchspinDemo.aspx.designer.cs">
+      <DependentUpon>bootstrap_touchspinDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="bootstrap3\bootstrap-validatorDemo.aspx.cs">
-      <DependentUpon>bootstrap-validatorDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_validatorDemo.aspx.cs">
+      <DependentUpon>bootstrap_validatorDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="bootstrap3\bootstrap-validatorDemo.aspx.designer.cs">
-      <DependentUpon>bootstrap-validatorDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_validatorDemo.aspx.designer.cs">
+      <DependentUpon>bootstrap_validatorDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="bootstrap3\modelDemo.aspx.cs">
-      <DependentUpon>modelDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_modelDemo.aspx.cs">
+      <DependentUpon>bootstrap_modelDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="bootstrap3\modelDemo.aspx.designer.cs">
-      <DependentUpon>modelDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_modelDemo.aspx.designer.cs">
+      <DependentUpon>bootstrap_modelDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="bootstrap3\typeaheadDemo.aspx.cs">
-      <DependentUpon>typeaheadDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_typeaheadDemo.aspx.cs">
+      <DependentUpon>bootstrap_typeaheadDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="bootstrap3\typeaheadDemo.aspx.designer.cs">
-      <DependentUpon>typeaheadDemo.aspx</DependentUpon>
+    <Compile Include="bootstrap3\bootstrap_typeaheadDemo.aspx.designer.cs">
+      <DependentUpon>bootstrap_typeaheadDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

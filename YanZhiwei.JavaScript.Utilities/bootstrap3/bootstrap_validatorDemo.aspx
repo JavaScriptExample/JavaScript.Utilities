@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap-validatorDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrapvalidatorDemo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap_validatorDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrap_validatorDemo" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title>bootstrapvalidator Demo</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-validator/css/bootstrapValidator.css" rel="stylesheet" />
-    <script src="../../jquery/jquery-1.9.1.min.js"></script>
+    <script src="../jquery/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="bootstrap-validator/js/bootstrapValidator.js"></script>
     <script type="text/javascript">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap-touchspinDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrap_touchspinDemo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bootstrap_touchspinDemo.aspx.cs" Inherits="YanZhiwei.JavaScript.Utilities.bs.v3.bootstrap_touchspinDemo" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
     <title>bootstrap-touchspin Demo</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-touchspin/bootstrap.touchspin.min.css" rel="stylesheet" />
-    <script src="../../jquery/jquery-1.9.1.min.js"></script>
+    <script src="../jquery/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="bootstrap-touchspin/bootstrap.touchspin.min.js"></script>
     <script src="touchSpin.js"></script>

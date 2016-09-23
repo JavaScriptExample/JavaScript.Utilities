@@ -7,11 +7,11 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace YanZhiwei.JavaScript.Utilities.bs.v3 {
-    
-    
-    public partial class typeaheadDemo {
-        
- 
+namespace YanZhiwei.JavaScript.Utilities.bs.v3
+{
+
+
+    public partial class bootstrap_validatorDemo
+    {
     }
 }
