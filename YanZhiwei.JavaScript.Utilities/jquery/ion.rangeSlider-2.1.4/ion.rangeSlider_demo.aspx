@@ -13,14 +13,18 @@
     <script src="rangeSlider.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            UIRangeSlider.initCommon('energySaveSilder', 1, 255, 1, '档');
+            UIRangeSlider.initCommon('energySaveSilder', 1, 255, 1, '档', null, function (value) {
+                return value == 255 ? "无极调光" : value;
+            });
+            UIRangeSlider.initCommon('energySaveSilder2', 1, 255, 1, '档');
         });
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <input id="silderEnergySaver" type="text" name="energySaveSilder" value="128" />
+            <input id="silderEnergySaver" type="text" name="energySaveSilder" value="128" /><br />
+            <input id="silderEnergySaver2" type="text" name="energySaveSilder2" value="128" />
         </div>
     </form>
 </body>
