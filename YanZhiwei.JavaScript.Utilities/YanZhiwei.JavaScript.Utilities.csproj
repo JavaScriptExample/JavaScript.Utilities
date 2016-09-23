@@ -204,6 +204,8 @@
     <Content Include="bootstrap3\typeahead\typeahead.bundle.js" />
     <Content Include="bootstrap3\typeahead\typeahead.bundle.min.js" />
     <Content Include="bootstrap3\typeahead\typeahead.css" />
+    <Content Include="dictionary.js" />
+    <Content Include="dictionaryDemo.aspx" />
     <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.dll" />
     <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.XML" />
     <Content Include="DLL\DotNet2.Interfaces.dll" />
@@ -454,7 +456,6 @@
     <Content Include="jquery\zTree-3.5\zTree_demo.aspx" />
     <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />
-    <Content Include="JsDemo2.aspx" />
     <Content Include="css3\ie-css3.htc" />
     <Content Include="googleMap\V3\gUtils.html" />
     <Content Include="googleMap\V3\gUtils.js" />
@@ -635,7 +636,7 @@
     <Content Include="store.js\storeTest.aspx" />
     <Content Include="store.js\storeWithExpiration.js" />
     <Content Include="userData.js" />
-    <Content Include="userDataTest.aspx" />
+    <Content Include="userDataDemo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Images\cab_0_0_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -713,6 +714,13 @@
     <Compile Include="bootstrap3\bootstrap_typeaheadDemo.aspx.designer.cs">
       <DependentUpon>bootstrap_typeaheadDemo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dictionaryDemo.aspx.cs">
+      <DependentUpon>dictionaryDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dictionaryDemo.aspx.designer.cs">
+      <DependentUpon>dictionaryDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -772,13 +780,6 @@
     <Compile Include="JsDemo.aspx.designer.cs">
       <DependentUpon>JsDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JsDemo2.aspx.cs">
-      <DependentUpon>JsDemo2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="JsDemo2.aspx.designer.cs">
-      <DependentUpon>JsDemo2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="store.js\storeTest.aspx.cs">
@@ -788,12 +789,12 @@
     <Compile Include="store.js\storeTest.aspx.designer.cs">
       <DependentUpon>storeTest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userDataTest.aspx.cs">
-      <DependentUpon>userDataTest.aspx</DependentUpon>
+    <Compile Include="userDataDemo.aspx.cs">
+      <DependentUpon>userDataDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="userDataTest.aspx.designer.cs">
-      <DependentUpon>userDataTest.aspx</DependentUpon>
+    <Compile Include="userDataDemo.aspx.designer.cs">
+      <DependentUpon>userDataDemo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

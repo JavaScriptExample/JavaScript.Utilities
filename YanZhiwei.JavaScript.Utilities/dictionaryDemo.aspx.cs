@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace YanZhiwei.JavaScript.Utilities
 {
-    public partial class JsDemo2 : System.Web.UI.Page
+    public partial class dictionaryDemo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

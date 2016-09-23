@@ -7,11 +7,13 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace YanZhiwei.JavaScript.Utilities {
+namespace YanZhiwei.JavaScript.Utilities
+{
+
+
+    public partial class dictionaryDemo
+    {
     
-    
-    public partial class JsDemo2 {
-        
         /// <summary>
         /// form1 控件。
         /// </summary>
