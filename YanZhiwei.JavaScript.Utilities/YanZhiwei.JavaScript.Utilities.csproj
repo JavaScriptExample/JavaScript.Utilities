@@ -94,6 +94,7 @@
     <Content Include="bootstrap3\bootbox\bootbox.js" />
     <Content Include="bootstrap3\bootbox\bootbox.min.js" />
     <Content Include="bootstrap3\bootbox\bootboxUtils.js" />
+    <Content Include="bootstrap3\bootstrap_Templet.aspx" />
     <Content Include="bootstrap3\bootstrap_touchspinDemo.aspx" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.css" />
     <Content Include="bootstrap3\bootstrap-touchspin\bootstrap.touchspin.js" />
@@ -198,6 +199,7 @@
     <Content Include="bootstrap3\js\bootstrap.min.js" />
     <Content Include="bootstrap3\js\npm.js" />
     <Content Include="bootstrap3\bootstrap_modelDemo.aspx" />
+    <Content Include="bootstrap3\page\templet.js" />
     <Content Include="bootstrap3\touchSpin.js" />
     <Content Include="bootstrap3\bootstrap_typeaheadDemo.aspx" />
     <Content Include="bootstrap3\typeahead\handlebars.min.js" />
@@ -686,6 +688,13 @@
     <Compile Include="bootstrap3\bootboxDemo.aspx.designer.cs">
       <DependentUpon>bootboxDemo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bootstrap3\bootstrap_Templet.aspx.cs">
+      <DependentUpon>bootstrap_Templet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrap3\bootstrap_Templet.aspx.designer.cs">
+      <DependentUpon>bootstrap_Templet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="bootstrap3\bootstrap_touchspinDemo.aspx.cs">
       <DependentUpon>bootstrap_touchspinDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -780,6 +789,7 @@
     <Compile Include="JsDemo.aspx.designer.cs">
       <DependentUpon>JsDemo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="store.js\storeTest.aspx.cs">
