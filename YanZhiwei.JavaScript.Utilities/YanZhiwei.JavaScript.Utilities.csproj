@@ -516,6 +516,8 @@
     <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.css" />
     <Content Include="jquery\jquery-ui-1.12.0\jquery-ui.theme.min.css" />
     <Content Include="jquery\jquery-ui-1.12.0\LICENSE.txt" />
+    <Content Include="jquery\jquery.pager\jquery.pager.js" />
+    <Content Include="jquery\jquery.pager\Pager.css" />
     <Content Include="jquery\zTree-3.5\zTree_demo.aspx" />
     <Content Include="jqUtilsDemo.aspx" />
     <Content Include="JsDemo.aspx" />

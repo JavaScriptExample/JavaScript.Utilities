@@ -920,6 +920,17 @@
             时间:2016/10/15 23:16
             备注:
         </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Mapper.GeneralMapper.ToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.String[])">
+            <summary>
+            将集合导出为DataTable
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">需要导出的集合</param>
+            <param name="propertyNameList">需要包含显示的实体类的属性</param>
+            <returns>DataTable</returns>
+            时间:2016/10/16 15:54
+            备注:
+        </member>
         <member name="M:YanZhiwei.DotNet3._5.Utilities.Mapper.GeneralMapper.ToList``1(System.Data.DataTable)">
             <summary>
             将DataTable导出成集合

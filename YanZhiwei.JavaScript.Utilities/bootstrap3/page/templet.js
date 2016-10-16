@@ -3,10 +3,14 @@
 var Templet = {
     pageClick: function (pageIndex, pageSize) {
         var _query = "../BackHandler/BaseHandler.ashx?action=getLocationList";
-        jqUtils.Ajax.post(_query, null, function (data) {
+        pageSize = pageSize == undefined ? 10 : pageSize;
+        var _paramter = {};
+        _paramter["PageIndex"] = pageIndex;
+        _paramter["PageSize"] = pageSize;
+        jqUtils.Ajax.post(_query, _paramter, function (data) {
             var Html = "";
-            if (data != undefined && data.length > 0) {
-                $(data).each(function (i, item) {
+            if (data != undefined && data.PagedList.length > 0) {
+                $(data.PagedList).each(function (i, item) {
                     Html += "<tr class=\"odd gradeX\">";
                     Html += "<td><input type=\"checkbox\" name=\"user_item\" class=\"checkboxes\" value=\"" + item.LocalNum + "\"/></td>";
                     Html += "<td>" + (i + 1) + "</td>";
@@ -33,6 +37,7 @@ var Templet = {
                 });
             }
             $("#tabInfo tbody").html(Html);
+            $("#mypager").pager({ pagenumber: pageIndex, recordCount: data.TotalItemCount, pageSize: pageSize, buttonClickCallback: Templet.pageClick });
         });
     },
     selectAll: function (item) {
