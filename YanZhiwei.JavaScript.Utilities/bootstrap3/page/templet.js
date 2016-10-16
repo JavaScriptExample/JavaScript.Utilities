@@ -1,4 +1,5 @@
-﻿/// <reference path="D:\Source\Repos\JavaScript.Utilities\YanZhiwei.JavaScript.Utilities\jqUtils.js" />
+﻿/// <reference path="D:\Source\Repos\JavaScript.Utilities\YanZhiwei.JavaScript.Utilities\jquery/jquery-1.9.1.js" />
+
 var Templet = {
     pageClick: function (pageIndex, pageSize) {
         var _query = "../BackHandler/BaseHandler.ashx?action=getLocationList";
@@ -34,13 +35,24 @@ var Templet = {
             $("#tabInfo tbody").html(Html);
         });
     },
-    SelectAll: function (item) {
-        var flag = $(item).attr("checked");
-        if (flag || flag == "checked") {
-            $("input[name='user_item']").attr("checked", true);
-        }
-        else {
-            $("input[name='user_item']").attr("checked", false);
-        }
+    selectAll: function (item) {
+        var flag = $(item).prop("checked");
+        $("input[name='user_item']").prop("checked", flag);
+    },
+    ToExcel: function () {
+        var _query = "../BackHandler/BaseHandler.ashx?action=exportLocationExcel";
+        jqUtils.Ajax.post(_query, null, function (data) {
+            if (data.StatusCode == 200) {
+                if (data.Content != undefined && data.Content != "") {
+                    var path = unescape(data.Content);
+                    window.location.href = path;
+                    return true;
+                } else {
+                    alert("导出EXCEL失败，请稍后重试！");
+                    return true;
+                }
+            }
+        });
+        return true;
     }
 };

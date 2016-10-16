@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\DotNet.Newtonsoft.Json.Utilities.dll</HintPath>
     </Reference>
+    <Reference Include="DotNet.NPOI2.Utilities, Version=1.0.6132.38825, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DotNet.NPOI2.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="DotNet2.Interfaces, Version=1.0.5994.41447, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\DotNet2.Interfaces.dll</HintPath>
@@ -67,6 +71,22 @@
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -194,6 +214,7 @@
     <Content Include="bootstrap3\css\bootstrap-rtl.min.css" />
     <Content Include="bootstrap3\css\bootstrap.css" />
     <Content Include="bootstrap3\css\bootstrap.min.css" />
+    <Content Include="bootstrap3\css\style.css" />
     <Content Include="bootstrap3\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrap3\js\bootstrap.js" />
     <Content Include="bootstrap3\js\bootstrap.min.js" />
@@ -210,6 +231,8 @@
     <Content Include="dictionaryDemo.aspx" />
     <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.dll" />
     <Content Include="DLL\DotNet.Newtonsoft.Json.Utilities.XML" />
+    <Content Include="DLL\DotNet.NPOI2.Utilities.dll" />
+    <Content Include="DLL\DotNet.NPOI2.Utilities.XML" />
     <Content Include="DLL\DotNet2.Interfaces.dll" />
     <Content Include="DLL\DotNet2.Utilities.dll" />
     <Content Include="DLL\DotNet2.Utilities.xml" />
@@ -218,6 +241,44 @@
     <Content Include="DLL\DotNet3.5.Utilities.XML" />
     <Content Include="DLL\Newtonsoft.Json.dll" />
     <Content Include="DLL\Newtonsoft.Json.xml" />
+    <Content Include="bootstrap3\font-awesome\.gitignore" />
+    <Content Include="bootstrap3\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="bootstrap3\font-awesome\css\font-awesome.css" />
+    <Content Include="bootstrap3\font-awesome\css\font-awesome.min.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\css\font-awesome.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\css\font-awesome.min.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\css\prettify.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\css\site.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\ico\favicon.ico" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\img\contribution-sample.png" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\img\fort_awesome.jpg" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\backbone.min.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\bootstrap-222.min.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\index\index.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\prettify.min.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\js\underscore.min.js" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\buttons.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\css-tests.css" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\css-tests.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\forms-responsive.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\forms.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\navbar-fixed-top.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\navbar-static-top.html" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tests\navbar.html" />
+    <Content Include="bootstrap3\font-awesome\docs\design.html" />
+    <Content Include="bootstrap3\font-awesome\docs\index.html" />
+    <Content Include="bootstrap3\font-awesome\docs\test.html" />
+    <Content Include="DLL\NPOI.dll" />
+    <Content Include="DLL\NPOI.OOXML.dll" />
+    <Content Include="DLL\NPOI.OOXML.xml" />
+    <Content Include="DLL\NPOI.OpenXml4Net.dll" />
+    <Content Include="DLL\NPOI.OpenXml4Net.xml" />
+    <Content Include="DLL\NPOI.OpenXmlFormats.dll" />
+    <Content Include="DLL\NPOI.xml" />
     <Content Include="Global.asax" />
     <Content Include="jquery\datatables-1.10.2\all.min.js" />
     <Content Include="jquery\datatables-1.10.2\arrays.txt" />
@@ -618,6 +679,75 @@
     <Content Include="bootstrap3\bootstrap-touchspin\README.md" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\fontawesome-webfont.woff" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\FontAwesome.otf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\museo_slab_300-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\museo_slab_300-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\museo_slab_500-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\museo_slab_500-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\proximanova-sbold-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\proximanova-sbold-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\proximanova-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\font\proximanova-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\img\icon-flag.pdf" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\font-awesome-ie7.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\font-awesome.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\font-site.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\mixins.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\site.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\accordion.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\alerts.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\bootstrap.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\breadcrumbs.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\button-groups.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\buttons.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\carousel.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\close.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\code.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\component-animations.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\dropdowns.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\forms.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\grid.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\hero-unit.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\labels-badges.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\layouts.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\media.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\mixins.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\modals.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\navbar.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\navs.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\pager.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\pagination.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\popovers.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\progress-bars.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\reset.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive-1200px-min.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive-767px-max.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive-768px-979px.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive-navbar.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive-utilities.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\responsive.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\scaffolding.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\sprites.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tables.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\thumbnails.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\tooltip.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\type.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\utilities.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\variables.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\twbs-222\wells.less" />
+    <Content Include="bootstrap3\font-awesome\docs\assets\less\variables.less" />
+    <Content Include="bootstrap3\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="bootstrap3\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="bootstrap3\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="bootstrap3\font-awesome\font\FontAwesome.otf" />
+    <Content Include="bootstrap3\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="bootstrap3\font-awesome\less\font-awesome.less" />
+    <Content Include="bootstrap3\font-awesome\README.md" />
+    <Content Include="bootstrap3\font-awesome\sass\font-awesome.sass" />
+    <Content Include="bootstrap3\font-awesome\sass\font-awesome.scss" />
     <None Include="jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="jquery\jquery-1.9.1.js" />
     <Content Include="jquery\jquery-1.9.1.min.js" />
@@ -813,6 +943,9 @@
     <Content Include="store.js\Changelog" />
     <Content Include="store.js\LICENSE" />
     <Content Include="jquery\jquery-ui-1.12.0\package.json" />
+    <Content Include="UploadFiles\库位管理20161016131340.xls" />
+    <Content Include="UploadFiles\库位管理20161016131427.xls" />
+    <Content Include="UploadFiles\库位管理20161016131458.xls" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

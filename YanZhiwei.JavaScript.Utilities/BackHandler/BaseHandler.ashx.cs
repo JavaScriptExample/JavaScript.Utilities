@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using YanZhiwei.DotNet.NPOI2.Utilities;
 using YanZhiwei.DotNet2.Utilities.Collection;
 using YanZhiwei.DotNet2.Utilities.Common;
 using YanZhiwei.DotNet2.Utilities.DataOperator;
 using YanZhiwei.DotNet2.Utilities.Enum;
 using YanZhiwei.DotNet3._5.Utilities.Common;
+using YanZhiwei.DotNet3._5.Utilities.Mapper;
 using YanZhiwei.DotNet3._5.Utilities.Model;
 using YanZhiwei.DotNet3._5.Utilities.WebForm.JqueryPlugin;
 using YanZhiwei.JavaScript.Utilities.Model;
-
+using YanZhiwei.DotNet3._5.Utilities.WebForm;
 namespace YanZhiwei.JavaScript.Utilities.BackHandler
 {
     /// <summary>
@@ -41,6 +45,22 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                 PagedList<Location> _pageResult = _helper.ExecutePageQuery<Location>("[Location]", "*", "ID", OrderType.Desc, string.Empty, 10, 1);
                 string _json = SerializeHelper.JsonSerialize(_pageResult).ParseJsonDateTime();
                 context.Response.Write(_json);
+            }
+            else if(_actionType.CompareIgnoreCase("exportLocationExcel"))
+            {
+                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
+                PagedList<Location> _pageResult = _helper.ExecutePageQuery<Location>("[Location]", "*", "ID", OrderType.Desc, string.Empty, 10, 1);
+                DataTable _result = GeneralMapper.ToDataTable<Location>(_pageResult);
+                string _filePath = context.Server.MapPath("~/UploadFiles/");
+                
+                if(!Directory.Exists(_filePath))
+                {
+                    Directory.CreateDirectory(_filePath);
+                }
+                
+                string _filename = string.Format("库位管理{0}.xls", DateTime.Now.ToString("yyyyMMddHHmmss"));
+                NPOIExcel.ToExcel(_result, "库位管理", "库位", Path.Combine(_filePath, _filename));
+                context.CreateResponse(("/UploadFiles/" + _filename).Escape(), HttpStatusCode.OK);
             }
             else
             {

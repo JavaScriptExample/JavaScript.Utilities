@@ -88,6 +88,52 @@
             <param name="assembly">Assembly</param>
             <returns>类型集合</returns>
         </member>
+        <member name="T:YanZhiwei.DotNet3._5.Utilities.Common.DisplayNameHelper">
+            <summary>
+            获取[DisplayName]辅助类
+            </summary>
+            时间:2016/10/15 23:31
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Common.DisplayNameHelper.Get``1(System.String)">
+            <summary>
+            获取[DisplayName]名称
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="propertyName">需要获取[DisplayName]的属性</param>
+            <returns>[DisplayName]</returns>
+            时间:2016/10/15 23:36
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Common.DisplayNameHelper.Get(System.Type,System.String)">
+            <summary>
+            获取[DisplayName]名称
+            </summary>
+            <param name="type">类型</param>
+            <param name="propertyName">需要获取[DisplayName]的属性</param>
+            <returns>[DisplayName]</returns>
+            时间:2016/10/15 23:37
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Common.DisplayNameHelper.Get(System.Reflection.PropertyInfo)">
+            <summary>
+            获取[DisplayName]名称
+            </summary>
+            <param name="property">PropertyInfo</param>
+            <returns>[DisplayName]</returns>
+            时间:2016/10/15 23:37
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Common.DisplayNameHelper.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            获取[DisplayName]名称
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="keySelector">选择表达式</param>
+            <returns>[DisplayName]</returns>
+            时间:2016/10/15 23:42
+            备注:
+        </member>
         <member name="T:YanZhiwei.DotNet3._5.Utilities.Common.GuidHelper">
             <summary>
             Guid帮助类
@@ -856,6 +902,33 @@
             <returns>集合</returns>
             创建时间:2015-05-27 10:19
             备注说明:<c>null</c>
+        </member>
+        <member name="T:YanZhiwei.DotNet3._5.Utilities.Mapper.GeneralMapper">
+            <summary>
+            通用类型映射转换
+            </summary>
+            时间:2016/10/15 22:34
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Mapper.GeneralMapper.ToDataTable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            将集合导出为DataTable
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">需要导出的集合</param>
+            <returns>DataTable</returns>
+            时间:2016/10/15 23:16
+            备注:
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.Mapper.GeneralMapper.ToList``1(System.Data.DataTable)">
+            <summary>
+            将DataTable导出成集合
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="table">需要导出的DataTable</param>
+            <returns>集合</returns>
+            时间:2016/10/15 22:41
+            备注:
         </member>
         <member name="T:YanZhiwei.DotNet3._5.Utilities.Model.DataTablePageResult">
             <summary>
