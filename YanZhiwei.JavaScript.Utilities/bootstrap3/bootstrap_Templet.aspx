@@ -58,6 +58,12 @@
                 background-color: #fff;
                 cursor: default;
             }
+
+        .widget-body .dataTables_info, .widget-body .dataTables_paginate {
+            margin-top: 5px !important;
+            padding-bottom: 0px !important;
+            margin-bottom: -4px !important;
+        }
     </style>
     <script type="text/javascript">
         $(document).ready(function () {

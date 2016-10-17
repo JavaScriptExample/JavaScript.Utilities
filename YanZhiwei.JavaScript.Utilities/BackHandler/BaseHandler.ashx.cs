@@ -43,14 +43,14 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             {
                 int _pageIndex = context.Request.Params["PageIndex"].ToInt32OrDefault(1),
                     _pageSize = context.Request.Params["PageSize"].ToInt32OrDefault(10);
-                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
+                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-IT-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
                 PagedList<Location> _pageResult = _helper.ExecutePageQuery<Location>("[Location]", "*", "ID", OrderType.Desc, string.Empty, _pageSize, _pageIndex);
-                string _json = SerializeHelper.JsonSerialize(new JsonPagedList<Location>(_pageResult));
+                string _json = SerializeHelper.JsonSerialize(new JsonPagedList<Location>(_pageResult)).ParseJsonDateTime();
                 context.Response.Write(_json);
             }
             else if(_actionType.CompareIgnoreCase("exportLocationExcel"))
             {
-                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
+                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-IT-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
                 PagedList<Location> _pageResult = _helper.ExecutePageQuery<Location>("[Location]", "*", "ID", OrderType.Desc, string.Empty, 10, 1);
                 DataTable _result = GeneralMapper.ToDataTable<Location>(_pageResult, new string[4] { "LocalNum", "LocalBarCode", "LocalName", "StorageNum" });
                 string _filePath = context.Server.MapPath("~/UploadFiles/");
