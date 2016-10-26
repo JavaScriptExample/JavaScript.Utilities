@@ -1085,26 +1085,6 @@
             缩略图路径
             </summary>
         </member>
-        <member name="T:YanZhiwei.DotNet3._5.Utilities.Model.JsonResult">
-            <summary>
-            Json
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet3._5.Utilities.Model.JsonResult.Content">
-            <summary>
-            Message
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet3._5.Utilities.Model.JsonResult.StatusCode">
-            <summary>
-            状态码 eg：System.Net.HttpStatusCode.BadRequest
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet3._5.Utilities.Model.JsonResult.ErrorCode">
-            <summary>
-            错误代码，用于辨识错误类型
-            </summary>
-        </member>
         <member name="T:YanZhiwei.DotNet3._5.Utilities.WebClient.CNNWebClient">
             <summary>
             中国网站请求
@@ -1480,35 +1460,55 @@
             过期时间
             </summary>
         </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpGet``1(System.String,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
+            <summary>
+            向远程Url Get数据类
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="uri">请求URL地址</param>
+            <param name="serializationType">序列化方式</param>
+            <returns>反序列化对象</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpGet(System.String)">
+            <summary>
+            向远程Url Get数据类
+            </summary>
+            <param name="uri">请求URL地址</param>
+            <returns>响应字符串</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpPost``1(System.String,System.Object,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
+            <summary>
+            向远程Url Post数据
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="uri">请求URL地址</param>
+            <param name="data">请求参数</param>
+            <param name="serializationType">序列化方式</param>
+            <returns>反序列化对象</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpPost(System.String,System.Object,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
+            <summary>
+            向远程Url Post数据
+            </summary>
+            <param name="uri">请求URL地址</param>
+            <param name="data">请求参数</param>
+            <param name="serializationType">参数序列化方式</param>
+            <returns>响应字符串</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpPost(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            向远程Url Post数据
+            </summary>
+            <param name="uri">请求URL地址</param>
+            <param name="data">请求参数</param>
+            <returns>响应字符串</returns>
+        </member>
         <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.GetResponseImage(System.String)">
             <summary>
             获得响应中的图像
             </summary>
             <param name="url">链接</param>
             <returns>若发生异常则返回NULL</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpGet(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            get请求获取返回的html
-            </summary>
-            <param name="url">无参URL</param>
-            <param name="querydata">参数</param>
-            <returns></returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpGet(System.String)">
-            <summary>
-            get请求获取返回的html
-            </summary>
-            <param name="url">链接</param>
-            <returns>html</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpPost(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            post请求返回html
-            </summary>
-            <param name="url">连接</param>
-            <param name="postParamters">参数</param>
-            <returns>html</returns>
         </member>
         <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.Core.WebRequest.HttpUploadFile(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
@@ -1601,27 +1601,24 @@
             创建时间:2015-06-09 11:15
             备注说明:<c>null</c>
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.Object,System.Net.HttpStatusCode,System.Int32)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.Object,YanZhiwei.DotNet2.Utilities.Enum.AjaxResultType,System.String)">
             <summary>
-            创建Response响应
-            <para>eg:context.CreateResponse(_zNodeList, HttpStatusCode.OK);</para>
+            创建Ajax响应
             </summary>
             <param name="context">HttpContext</param>
-            <param name="content">响应内容</param>
-            <param name="statusCode">状态码</param>
-            <param name="errorCode">T错误代码</param>
-            时间：2016-05-04 17:32
+            <param name="data">返回数据</param>
+            <param name="type">Ajax操作结果类型</param>
+            <param name="content">消息内容</param>
+            时间：2016/10/26 10:15
             备注：
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.Object,System.Net.HttpStatusCode)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.String)">
             <summary>
-            创建Response响应
-            <para>eg:context.CreateResponse(_zNodeList, HttpStatusCode.OK);</para>
+            创建Ajax响应
             </summary>
             <param name="context">HttpContext</param>
-            <param name="content">响应内容</param>
-            <param name="statusCode">状态码</param>
-            时间：2016-05-04 17:32
+            <param name="content">消息内容</param>
+            时间：2016/10/26 10:18
             备注：
         </member>
         <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.Set304Cache(System.Web.HttpContext)">
@@ -1669,54 +1666,6 @@
             <param name="name">键</param>
             <param name="value">值</param>
             <returns>更新后链接</returns>
-        </member>
-        <member name="T:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper">
-            <summary>
-            向远程Url Post/Get数据类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper.HttpGet``1(System.String,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
-            <summary>
-            向远程Url Get数据类
-            </summary>
-            <typeparam name="T">泛型</typeparam>
-            <param name="uri">请求URL地址</param>
-            <param name="serializationType">序列化方式</param>
-            <returns>反序列化对象</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper.HttpGet(System.String)">
-            <summary>
-            向远程Url Get数据类
-            </summary>
-            <param name="uri">请求URL地址</param>
-            <returns>响应字符串</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper.HttpPost``1(System.String,System.Object,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
-            <summary>
-            向远程Url Post数据
-            </summary>
-            <typeparam name="T">泛型</typeparam>
-            <param name="uri">请求URL地址</param>
-            <param name="data">请求参数</param>
-            <param name="serializationType">序列化方式</param>
-            <returns>反序列化对象</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper.HttpPost(System.String,System.Object,YanZhiwei.DotNet3._5.Utilities.Enum.SerializationType)">
-            <summary>
-            向远程Url Post数据
-            </summary>
-            <param name="uri">请求URL地址</param>
-            <param name="data">请求参数</param>
-            <param name="serializationType">序列化方式</param>
-            <returns>响应字符串</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.NetHelper.HttpPost(System.String,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            向远程Url Post数据
-            </summary>
-            <param name="uri">请求URL地址</param>
-            <param name="data">请求参数</param>
-            <returns>响应字符串</returns>
         </member>
         <member name="T:YanZhiwei.DotNet3._5.Utilities.Encryptor.AESEncryptor">
             <summary>

@@ -2828,7 +2828,19 @@
              时间：2016/6/22 9:35
              备注：
         </member>
-        <!-- Badly formed XML comment ignored for member "M:YanZhiwei.DotNet2.Utilities.Common.ByteHelper.ToBytes(System.UInt64,System.Boolean)" -->
+        <member name="M:YanZhiwei.DotNet2.Utilities.Common.ByteHelper.ToBytes(System.UInt64,System.Boolean)">
+             <summary>
+             把ulong转换成字节数组
+             <para> ulong _data2 = 255;</para>
+            <para> CollectionAssert.AreEqual(new byte[8] { 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, ByteHelper.ToBytes(_data2, false));</para>
+             <para> CollectionAssert.AreEqual(new byte[8] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff }, ByteHelper.ToBytes(_data2, true));</para>
+             </summary>
+             <param name="value">ulong</param>
+             <param name="reverse">if set to <c>true</c> [reverse].</param>
+             <returns></returns>
+             时间：2016/6/22 9:46
+             备注：
+        </member>
         <member name="M:YanZhiwei.DotNet2.Utilities.Common.ByteHelper.ToBytes(System.UInt16)">
             <summary>
             把ushort(2个字节)类型转化为字节数组
@@ -3591,6 +3603,12 @@
             </summary>
             <param name="date">需要操作的时间</param>
             <returns>DateTime</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.Common.DateHelper.GetTimeStamp">
+            <summary>
+            获取时间戳【毫秒】
+            </summary>
+            <returns>时间戳</returns>
         </member>
         <member name="T:YanZhiwei.DotNet2.Utilities.Common.HtmlHelper">
             <summary>
@@ -4680,16 +4698,16 @@
             Initializes the <see cref="T:YanZhiwei.DotNet2.Utilities.Common.UnixEpochHelper"/> class.
             </summary>
         </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.Common.UnixEpochHelper.DateTimeFromUnixTimestampMillis(System.Int64)">
+        <member name="M:YanZhiwei.DotNet2.Utilities.Common.UnixEpochHelper.DateTimeFromUnixTimestampMillis(System.Double)">
             <summary>
             将Unix时间戳转换成DateTime
             </summary>
             <param name="millis">毫秒</param>
             <returns>DateTime</returns>
         </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.Common.UnixEpochHelper.GetCurrentUnixTimestampMillis">
+        <member name="M:YanZhiwei.DotNet2.Utilities.Common.UnixEpochHelper.GetCurrentUnixTimestamp">
             <summary>
-            获取当前时间Unix时间戳【毫秒】
+            获取当前时间Unix时间戳
             </summary>
             <returns>Unix时间戳</returns>
         </member>
@@ -5208,6 +5226,14 @@
             <returns>属性名称</returns>
             时间：2016/9/1 10:59
             备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.Common.ReflectHelper.DictionaryFromType``1(``0)">
+            <summary>
+            将实体类属性转换为字典形式
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="model">实体类</param>
+            <returns>字典</returns>
         </member>
         <member name="M:YanZhiwei.DotNet2.Utilities.Common.ReflectHelper.InvokeMethod(System.Object,System.String,System.Object[])">
             <summary>
@@ -7606,19 +7632,25 @@
         </member>
         <member name="M:YanZhiwei.DotNet2.Utilities.Model.AjaxResult.#ctor(System.String,YanZhiwei.DotNet2.Utilities.Enum.AjaxResultType,System.Object)">
             <summary>
-            初始化一个<see cref="T:YanZhiwei.DotNet2.Utilities.Model.AjaxResult"/>类型的新实例
+            构造函数
             </summary>
+            <param name="content">消息内容</param>
+            <param name="type">Ajax操作结果类型</param>
+            <param name="data">返回数据</param>
         </member>
         <member name="M:YanZhiwei.DotNet2.Utilities.Model.AjaxResult.#ctor(System.String)">
             <summary>
-            初始化一个<see cref="T:YanZhiwei.DotNet2.Utilities.Model.AjaxResult"/>类型的新实例
+            构造函数
             </summary>
-            <param name="content"></param>
+            <param name="content">消息内容</param>
         </member>
         <member name="M:YanZhiwei.DotNet2.Utilities.Model.AjaxResult.#ctor(System.String,System.Object,YanZhiwei.DotNet2.Utilities.Enum.AjaxResultType)">
             <summary>
-            初始化一个<see cref="T:YanZhiwei.DotNet2.Utilities.Model.AjaxResult"/>类型的新实例
+            构造函数
             </summary>
+            <param name="content">消息内容</param>
+            <param name="data">返回数据</param>
+            <param name="type">Ajax操作结果类型</param>
         </member>
         <member name="P:YanZhiwei.DotNet2.Utilities.Model.AjaxResult.Content">
             <summary>
@@ -7998,6 +8030,26 @@
             </summary>
             时间：2016/6/7 13:25
             备注：
+        </member>
+        <member name="F:YanZhiwei.DotNet2.Utilities.Model.SocketConnectionInfo.BufferSize">
+            <summary>
+            缓冲大小
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Model.SocketConnectionInfo.Socket">
+             <summary>
+            Socket对象
+             </summary>
+        </member>
+        <member name="F:YanZhiwei.DotNet2.Utilities.Model.SocketConnectionInfo.Buffer">
+            <summary>
+            缓冲
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Model.SocketConnectionInfo.BytesRead">
+            <summary>
+            读取字节
+            </summary>
         </member>
         <member name="T:YanZhiwei.DotNet2.Utilities.Model.SortCondition">
             <summary>
@@ -9741,6 +9793,684 @@
             Byte数组
             </returns>
         </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.WebRequestHelper">
+            <summary>
+            HttpRquest 辅助类
+            </summary>
+            时间：2016/10/19 14:26
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebRequestHelper.GetQueryString(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            拼接Get参数
+            </summary>
+            <param name="paramter"></param>
+            <returns>get参数拼接字符串</returns>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger">
+            <summary>
+            缓存帮助类
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AppPrefix">
+            <summary>
+            AppPrefix
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Cache">
+            <summary>
+            Cache对象
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Contain(System.String)">
+            <summary>
+            是否已缓存
+            </summary>
+            <param name="key">键</param>
+            <returns>是否已缓存</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Get(System.String)">
+            <summary>
+            获取缓存内容
+            </summary>
+            <param name="key">键</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Remove(System.String)">
+            <summary>
+            清除缓存
+            </summary>
+            <param name="key">键</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用。
+            </param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
+            </param>
+            <param name="dt">
+            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
+            slidingExpiration 参数必须为 NoSlidingExpiration
+            </param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Int32,System.Boolean,System.Web.Caching.CacheItemRemovedCallback)">
+            <summary>
+            本地缓存写入，包括分钟，是否绝对过期及缓存过期的回调
+            </summary>
+            <param name="key">key</param>
+            <param name="value">value</param>
+            <param name="minutes">缓存分钟</param>
+            <param name="isAbsoluteExpiration">是否绝对过期</param>
+            <param name="onRemoveCallback">缓存过期回调</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.TimeSpan)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
+            </param>
+            <param name="ts">
+            最后一次访问所插入对象时与该对象过期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将过期并被从缓存中移除。如果使用可调过期，则
+            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
+            </param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
+            </param>
+            <param name="dt">
+            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
+            slidingExpiration 参数必须为 NoSlidingExpiration
+            </param>
+            <param name="ts">
+            最后一次访问所插入对象时与该对象过期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将过期并被从缓存中移除。如果使用可调过期，则
+            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
+            </param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemRemovedCallback)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            该项的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 null。
+            </param>
+            <param name="absoluteExpiration">
+            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
+            slidingExpiration 参数必须为 NoSlidingExpiration
+            </param>
+            <param name="slidingExpiration">
+            最后一次访问所插入对象时与该对象到期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将到期并被从缓存中移除。如果使用可调到期，则
+            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
+            </param>
+            <param name="onUpdate">在从缓存中移除对象时将调用的委托（如果提供）。当从缓存中删除应用程序的对象时，可使用它来通知应用程序。</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemPriority,System.Web.Caching.CacheItemRemovedCallback)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="cacheDependency">
+            该项的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 null。
+            </param>
+            <param name="absoluteExpiration">
+            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
+            slidingExpiration 参数必须为 NoSlidingExpiration
+            </param>
+            <param name="slidingExpiration">
+            最后一次访问所插入对象时与该对象到期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将到期并被从缓存中移除。如果使用可调到期，则
+            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
+            </param>
+            <param name="priority">优先级</param>
+            <param name="onUpdate">在从缓存中移除对象时将调用的委托（如果提供）。当从缓存中删除应用程序的对象时，可使用它来通知应用程序。</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,``0,System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型，数值类型</typeparam>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="updateHanlder">更新委托</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.ItemRemovedCallback(System.String,System.Object,System.Web.Caching.CacheItemRemovedReason)">
+            <summary>
+            缓存处理策略
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="reason">原因</param>
+            时间：2016-05-26 9:53 备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,``0,System.Action{``0},System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型，数值类型.</typeparam>
+            <param name="key">键.</param>
+            <param name="value">值.</param>
+            <param name="addHanlder">新增委托</param>
+            <param name="updateHanlder">更新委托</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,System.Func{System.String,``0},System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型</typeparam>
+            <param name="key">键</param>
+            <param name="addHanlder">新增委托</param>
+            <param name="updateHanlder">修改委托</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger">
+            <summary>
+            cookie 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.AddValue(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            设置cookie （24小时过期）
+            </summary>
+            <param name="cookiename">键</param>
+            <param name="cookievalue">值</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.AddValue(System.String,System.Collections.Specialized.NameValueCollection,System.DateTime)">
+            <summary>
+            设置cookie
+            </summary>
+            <param name="cookiename">键.</param>
+            <param name="cookievalue">值</param>
+            <param name="expires">过期时间</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Get(System.String)">
+            <summary>
+            取Cookie
+            </summary>
+            <param name="name">键</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.GetValue(System.String)">
+            <summary>
+            取Cookie值
+            </summary>
+            <param name="name">键</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Remove(System.String)">
+            <summary>
+            移除Cookie
+            </summary>
+            <param name="name">cookie键</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Remove(System.Web.HttpCookie)">
+            <summary>
+            Removes the specified cookie.
+            </summary>
+            <param name="cookie">HttpCookie</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Save(System.String,System.String,System.Int32)">
+            <summary>
+            保存Cookie
+            </summary>
+            <param name="name">键</param>
+            <param name="value">值</param>
+            <param name="expiresHours">小时</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Save(System.Web.HttpCookie,System.Int32)">
+            <summary>
+            保存Cookie
+            </summary>
+            <param name="cookie">HttpCookie</param>
+            <param name="expiresHours">小时</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript">
+            <summary>
+            生成分页样式
+            </summary>
+            时间：2016-01-05 11:21
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32)">
+            <summary>
+            创建普通分页HTML脚本
+            </summary>
+            <param name="pageIndex">当前分页索引</param>
+            <param name="totalPageCount">总共分页数量</param>
+            <returns>分页Html</returns>
+            时间：2016-01-05 11:21
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32,System.String)">
+            <summary>
+            创建普通分页HTML脚本
+            </summary>
+            <param name="pageIndex">当前分页索引</param>
+            <param name="totalPageCount">总共分页数量</param>
+            <param name="extraParams">额外参数</param>
+            <returns>分页Html</returns>
+            时间：2016-01-05 11:22
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            创建普通分页HTML脚本
+            </summary>
+            <param name="pageIndex">当前分页索引</param>
+            <param name="totalPageCount">总共分页数量</param>
+            <param name="extraParams">额外参数</param>
+            <param name="absoluteAddress">The absolute address.</param>
+            <returns>分页Html</returns>
+            时间：2016-01-05 11:23
+            备注：
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager">
+            <summary>
+            Session 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Add``1(System.String,``0)">
+            <summary>
+            添加Session
+            默认过期时间
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Add``1(System.String,``0,System.Int32)">
+            <summary>
+            添加Session
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="iExpires">过期时间(分钟)</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,``0,System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型，数值类型</typeparam>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="updateHanlder">更新委托</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,``0,System.Action{``0},System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型，数值类型.</typeparam>
+            <param name="key">键.</param>
+            <param name="value">值.</param>
+            <param name="addHanlder">新增委托</param>
+            <param name="updateHanlder">更新委托</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,System.Func{System.String,``0},System.Func{System.String,``0,``0})">
+            <summary>
+            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型</typeparam>
+            <param name="key">键</param>
+            <param name="addHanlder">新增委托</param>
+            <param name="updateHanlder">修改委托</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Clear">
+            <summary>
+            清除所有Session
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Get``1(System.String)">
+            <summary>
+            获取Session
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="key">键</param>
+            <returns>数值</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.IsExisting(System.String)">
+            <summary>
+            是否存在此Session
+            </summary>
+            <param name="key">The key.</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Remove(System.String)">
+            <summary>
+            删除Session
+            </summary>
+            <param name="key">键</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Update``1(System.String,System.Func{System.String,``0,``0})">
+            <summary>
+             如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
+            </summary>
+            <typeparam name="TValue">泛型</typeparam>
+            <param name="key">键</param>
+            <param name="updateHanlder">修改委托</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.DropDownListHelper">
+            <summary>
+            DropDownList 帮助类
+            </summary>
+            时间：2015-10-30 8:58
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.DropDownListHelper.SetDataSource(System.Web.UI.WebControls.DropDownList,System.Object,System.String,System.String)">
+            <summary>
+            数据绑定
+            </summary>
+            <param name="dropdownList">DropDownList</param>
+            <param name="dataSource">绑定数据集合对象</param>
+            <param name="textField">显示绑定字段</param>
+            <param name="valueField">隐示绑定字段</param>
+            时间：2015-10-30 9:01
+            备注：
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper">
+            <summary>
+            文件下载
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper.ResponseFile(System.String,System.String,System.Int64)">
+            <summary>
+             输出硬盘文件，提供下载 支持大文件、续传、速度限制、资源占用小
+            </summary>
+            <param name="fileName">下载文件名</param>
+            <param name="filePhysicsPath">带文件名下载路径</param>
+            <param name="limitSpeed">每秒允许下载的字节数</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper.ResponseFile(System.String,System.String)">
+            <summary>
+            分块下载
+            </summary>
+            <param name="fileName">下载文件名</param>
+            <param name="filePhysicsPath">文件物理路径</param>
+            <returns>下载是否成功</returns>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.StaticFileHelper">
+            <summary>
+            静态文件帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.StaticFileHelper.GetMapPathFile(System.String)">
+            <summary>
+            获取物理地址
+            </summary>
+            <param name="fileVirtualPath">文件虚拟路径</param>
+            <returns>物理路径</returns>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper">
+            <summary>
+             GridView 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.InitializeColumnOrderBy(System.Web.UI.WebControls.GridView,System.String,YanZhiwei.DotNet2.Utilities.Enum.OrderType)">
+            <summary>
+            点击列头排序初始设定
+            </summary>
+            <param name="gridView">GridView</param>
+            <param name="orderColumnName">排序依定的绑定数据列名</param>
+            <param name="defaultOrderWay">排序方式，降序或升序</param>
+            时间：2015-11-02 17:21
+            备注：在Page_Load方法中使用；
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetColumnOrderBy(System.Web.UI.WebControls.GridView,System.Action{System.Web.UI.WebControls.GridView,System.String,YanZhiwei.DotNet2.Utilities.Enum.OrderType})">
+            <summary>
+            点击列头排序设定
+            </summary>
+            <param name="gridView">GridView</param>
+            <param name="finallyDataBindFactory">最后数据绑定委托</param>
+            时间：2015-11-02 17:21
+            备注：在OnInit事件中使用；
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetDataSource(System.Web.UI.WebControls.GridView,System.Object)">
+            <summary>
+            GridView数据绑定
+            </summary>
+            <param name="gridView">GridView</param>
+            <param name="datasource">需要绑定数据源</param>
+            时间：2015-11-02 13:41
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetOwnDataPager(System.Web.UI.WebControls.GridView,System.Int32,System.Web.UI.WebControls.PagerButtons,System.Action{System.Web.UI.WebControls.GridView})">
+            <summary>
+            设置数据自带分页
+            </summary>
+            <param name="gridview">GridView</param>
+            <param name="pageSize">分页时每页大小</param>
+            <param name="pagerStyle">自带分页样式</param>
+            <param name="finallyDataBindFactory">最后数据绑定委托</param>
+            时间：2015-11-02 14:51
+            备注：在OnInit事件中使用；
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetPagerTemplate(System.Web.UI.WebControls.GridView,System.Action{System.Web.UI.WebControls.GridView})">
+            <summary>
+            定制化分页模板
+            </summary>
+            <param name="gridView">GridView</param>
+            <param name="finallyDataBindFactory">最后数据绑定委托</param>
+            时间：2015-11-02 15:57
+            备注：在OnInit事件中使用；
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.ToDataTable(System.Web.UI.WebControls.GridView)">
+            <summary>
+            从GridView的数据生成DataTable
+            </summary>
+            <param name="gridview">GridView对象</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.ToExcel(System.Web.UI.WebControls.GridView,System.String)">
+            <summary>
+            将GridView导出到EXCEL
+            </summary>
+            <param name="gridview">GridView</param>
+            <param name="fileName">导出到的文件名称</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.GetCellText(System.Web.UI.WebControls.TableCell)">
+            <summary>
+            获取单元格内容
+            </summary>
+            <param name="cell">TableCell</param>
+            <returns>内容</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetCellText(System.Web.UI.WebControls.TableCell,System.Int32)">
+            <summary>
+            设置单元格内容
+            </summary>
+            <param name="cell">TableCell</param>
+            <param name="maxLen">最大长度</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper">
+            <summary>
+            JavaScript 操作类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.Alert(System.String)">
+            <summary>
+            JS弹出对消息话框
+            </summary>
+            <param name="message">要显示的消息</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.AlertAndRedirect(System.String,System.String)">
+            <summary>
+            JS弹出消息并跳转
+            </summary>
+            <param name="message">消息</param>
+            <param name="url">跳转的连接</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.JumpToSpecifiedUrl(System.String)">
+            <summary>
+            JS跳转指定URL
+            </summary>
+            <param name="url">要转到的URL</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.Refresh">
+            <summary>
+            JS刷新页面
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.RegisterScript(System.String)">
+            <summary>
+            向客户端写入js脚本
+            </summary>
+            <param name="script">js内容</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.HtmlInputFileHelper">
+            <summary>
+            HtmlInputFile 帮助类
+            </summary>
+            时间：2016-01-04 16:57
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.HtmlInputFileHelper.GetBytes(System.Web.UI.HtmlControls.HtmlInputFile)">
+            <summary>
+            将文件读取成byte数组
+            </summary>
+            <param name="htmlInputFile">HtmlInputFile</param>
+            <returns>若未有文件，则返回NULL；</returns>
+            时间：2016-01-04 17:07
+            备注：
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.LinkButtonHelper">
+            <summary>
+            LinkButton 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.LinkButtonHelper.Confirm(System.Web.UI.WebControls.LinkButton,System.String)">
+            <summary>
+            为LinkButton添加确认窗口
+            </summary>
+            <param name="linkbutton">LinkButton</param>
+            <param name="message">确认窗口文字信息</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.ListBoxHelper">
+            <summary>
+            ListBox 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ListBoxHelper.AddItemTooltip(System.Web.UI.WebControls.ListBox)">
+            <summary>
+            增加ListBox的Tooltip提示
+            </summary>
+            <param name="lb">ListBox</param>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.RequestHelper">
+            <summary>
+            Request 帮助类
+            </summary>
+            时间：2016/7/27 14:28
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.RequestHelper.GetClientInfo(System.Web.HttpRequest)">
+            <summary>
+            获取请求客户端信息
+            </summary>
+            <param name="request">HttpRequest</param>
+            <returns>RequestClientInfo</returns>
+            时间：2016/7/27 14:31
+            备注：
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper">
+            <summary>
+            WebForm 帮助类
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.FindControlRecursive(System.Web.UI.Control,System.String)">
+            <summary>
+            根据ID递归查找
+            </summary>
+            <param name="control">Control</param>
+            <param name="id">控件ID</param>
+            <returns>查找到的控件</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.GetQueryString(System.String)">
+            <summary>
+            根据Key获取QueryString
+            </summary>
+            <param name="key">键值</param>
+            <returns>数值</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.RestartWebApplication">
+            <summary>
+            重启程序
+            </summary>
+            <returns>重启是否成功</returns>
+        </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper">
+            <summary>
+            URL 帮助类
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.CurrentUrl">
+            <summary>
+            获取当前页面的Url
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.ServerDomain">
+            <summary>
+            获取当前页面的主域，如www.GMS.com主域是GMS.com
+            </summary>
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.UserIp">
+            <summary>
+            获取访问用户的IP
+            </summary>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootPath">
+            <summary>
+            取得网站根目录的物理路径
+            </summary>
+            <returns>网站根目录的物理路径</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootURI">
+            <summary>
+            取得网站的根目录的URL
+            </summary>
+            <returns>网站的根目录的URL</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootURI(System.Web.HttpRequest)">
+            <summary>
+            取得网站的根目录的URL
+            </summary>
+            <param name="reguest">HttpRequest</param>
+            <returns>网站的根目录的URL</returns>
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.Post(System.String)">
+            <summary>
+            获取表单Post过来的值
+            </summary>
+            <param name="name">参数</param>
+            <returns>参数数值</returns>
+        </member>
         <member name="T:YanZhiwei.DotNet2.Utilities.WinForm.Core.ColorConsole">
             <summary>
             彩色控制台输出
@@ -11065,670 +11795,6 @@
             <returns>设置是否成功</returns>
             日期：2015-10-13 13:44
             备注：
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger">
-            <summary>
-            缓存帮助类
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AppPrefix">
-            <summary>
-            AppPrefix
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Cache">
-            <summary>
-            Cache对象
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Contain(System.String)">
-            <summary>
-            是否已缓存
-            </summary>
-            <param name="key">键</param>
-            <returns>是否已缓存</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Get(System.String)">
-            <summary>
-            获取缓存内容
-            </summary>
-            <param name="key">键</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Remove(System.String)">
-            <summary>
-            清除缓存
-            </summary>
-            <param name="key">键</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用。
-            </param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
-            </param>
-            <param name="dt">
-            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
-            slidingExpiration 参数必须为 NoSlidingExpiration
-            </param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Int32,System.Boolean,System.Web.Caching.CacheItemRemovedCallback)">
-            <summary>
-            本地缓存写入，包括分钟，是否绝对过期及缓存过期的回调
-            </summary>
-            <param name="key">key</param>
-            <param name="value">value</param>
-            <param name="minutes">缓存分钟</param>
-            <param name="isAbsoluteExpiration">是否绝对过期</param>
-            <param name="onRemoveCallback">缓存过期回调</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.TimeSpan)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
-            </param>
-            <param name="ts">
-            最后一次访问所插入对象时与该对象过期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将过期并被从缓存中移除。如果使用可调过期，则
-            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
-            </param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 nullNothingnullptrnull 引用
-            </param>
-            <param name="dt">
-            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
-            slidingExpiration 参数必须为 NoSlidingExpiration
-            </param>
-            <param name="ts">
-            最后一次访问所插入对象时与该对象过期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将过期并被从缓存中移除。如果使用可调过期，则
-            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
-            </param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemRemovedCallback)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            该项的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 null。
-            </param>
-            <param name="absoluteExpiration">
-            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
-            slidingExpiration 参数必须为 NoSlidingExpiration
-            </param>
-            <param name="slidingExpiration">
-            最后一次访问所插入对象时与该对象到期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将到期并被从缓存中移除。如果使用可调到期，则
-            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
-            </param>
-            <param name="onUpdate">在从缓存中移除对象时将调用的委托（如果提供）。当从缓存中删除应用程序的对象时，可使用它来通知应用程序。</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.Set(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemPriority,System.Web.Caching.CacheItemRemovedCallback)">
-            <summary>
-            设置缓存
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="cacheDependency">
-            该项的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 null。
-            </param>
-            <param name="absoluteExpiration">
-            所插入对象将过期并被从缓存中移除的时间。若要避免可能出现的本地时间方面的问题（如从标准时间更改为夏时制），请对此参数值使用 UtcNow，不要使用 Now。如果使用绝对过期，则
-            slidingExpiration 参数必须为 NoSlidingExpiration
-            </param>
-            <param name="slidingExpiration">
-            最后一次访问所插入对象时与该对象到期时之间的时间间隔。如果该值等效于 20 分钟，则对象在最后一次被访问 20 分钟之后将到期并被从缓存中移除。如果使用可调到期，则
-            absoluteExpiration 参数必须为 NoAbsoluteExpiration。
-            </param>
-            <param name="priority">优先级</param>
-            <param name="onUpdate">在从缓存中移除对象时将调用的委托（如果提供）。当从缓存中删除应用程序的对象时，可使用它来通知应用程序。</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,``0,System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型，数值类型</typeparam>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="updateHanlder">更新委托</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.ItemRemovedCallback(System.String,System.Object,System.Web.Caching.CacheItemRemovedReason)">
-            <summary>
-            缓存处理策略
-            </summary>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="reason">原因</param>
-            时间：2016-05-26 9:53 备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,``0,System.Action{``0},System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型，数值类型.</typeparam>
-            <param name="key">键.</param>
-            <param name="value">值.</param>
-            <param name="addHanlder">新增委托</param>
-            <param name="updateHanlder">更新委托</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CacheManger.AddOrUpdate``1(System.String,System.Func{System.String,``0},System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型</typeparam>
-            <param name="key">键</param>
-            <param name="addHanlder">新增委托</param>
-            <param name="updateHanlder">修改委托</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger">
-            <summary>
-            cookie 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.AddValue(System.String,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            设置cookie （24小时过期）
-            </summary>
-            <param name="cookiename">键</param>
-            <param name="cookievalue">值</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.AddValue(System.String,System.Collections.Specialized.NameValueCollection,System.DateTime)">
-            <summary>
-            设置cookie
-            </summary>
-            <param name="cookiename">键.</param>
-            <param name="cookievalue">值</param>
-            <param name="expires">过期时间</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Get(System.String)">
-            <summary>
-            取Cookie
-            </summary>
-            <param name="name">键</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.GetValue(System.String)">
-            <summary>
-            取Cookie值
-            </summary>
-            <param name="name">键</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Remove(System.String)">
-            <summary>
-            移除Cookie
-            </summary>
-            <param name="name">cookie键</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Remove(System.Web.HttpCookie)">
-            <summary>
-            Removes the specified cookie.
-            </summary>
-            <param name="cookie">HttpCookie</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Save(System.String,System.String,System.Int32)">
-            <summary>
-            保存Cookie
-            </summary>
-            <param name="name">键</param>
-            <param name="value">值</param>
-            <param name="expiresHours">小时</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.CookieManger.Save(System.Web.HttpCookie,System.Int32)">
-            <summary>
-            保存Cookie
-            </summary>
-            <param name="cookie">HttpCookie</param>
-            <param name="expiresHours">小时</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript">
-            <summary>
-            生成分页样式
-            </summary>
-            时间：2016-01-05 11:21
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32)">
-            <summary>
-            创建普通分页HTML脚本
-            </summary>
-            <param name="pageIndex">当前分页索引</param>
-            <param name="totalPageCount">总共分页数量</param>
-            <returns>分页Html</returns>
-            时间：2016-01-05 11:21
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32,System.String)">
-            <summary>
-            创建普通分页HTML脚本
-            </summary>
-            <param name="pageIndex">当前分页索引</param>
-            <param name="totalPageCount">总共分页数量</param>
-            <param name="extraParams">额外参数</param>
-            <returns>分页Html</returns>
-            时间：2016-01-05 11:22
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.PagerHtmlScript.BuilderNormal(System.Int32,System.Int32,System.String,System.String)">
-            <summary>
-            创建普通分页HTML脚本
-            </summary>
-            <param name="pageIndex">当前分页索引</param>
-            <param name="totalPageCount">总共分页数量</param>
-            <param name="extraParams">额外参数</param>
-            <param name="absoluteAddress">The absolute address.</param>
-            <returns>分页Html</returns>
-            时间：2016-01-05 11:23
-            备注：
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager">
-            <summary>
-            Session 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Add``1(System.String,``0)">
-            <summary>
-            添加Session
-            默认过期时间
-            </summary>
-            <typeparam name="T">泛型</typeparam>
-            <param name="key">键</param>
-            <param name="value">值</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Add``1(System.String,``0,System.Int32)">
-            <summary>
-            添加Session
-            </summary>
-            <typeparam name="T">泛型</typeparam>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="iExpires">过期时间(分钟)</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,``0,System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型，数值类型</typeparam>
-            <param name="key">键</param>
-            <param name="value">值</param>
-            <param name="updateHanlder">更新委托</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,``0,System.Action{``0},System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型，数值类型.</typeparam>
-            <param name="key">键.</param>
-            <param name="value">值.</param>
-            <param name="addHanlder">新增委托</param>
-            <param name="updateHanlder">更新委托</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.AddOrUpdate``1(System.String,System.Func{System.String,``0},System.Func{System.String,``0,``0})">
-            <summary>
-            如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型</typeparam>
-            <param name="key">键</param>
-            <param name="addHanlder">新增委托</param>
-            <param name="updateHanlder">修改委托</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Clear">
-            <summary>
-            清除所有Session
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Get``1(System.String)">
-            <summary>
-            获取Session
-            </summary>
-            <typeparam name="T">泛型</typeparam>
-            <param name="key">键</param>
-            <returns>数值</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.IsExisting(System.String)">
-            <summary>
-            是否存在此Session
-            </summary>
-            <param name="key">The key.</param>
-            <returns>是否存在</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Remove(System.String)">
-            <summary>
-            删除Session
-            </summary>
-            <param name="key">键</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.Core.SessionManager.Update``1(System.String,System.Func{System.String,``0,``0})">
-            <summary>
-             如果该键尚不存在，则使用指定函数将键/值对添加到 Session；如果该键已存在，则使用该函数更新 Session 中的键/值对。
-            </summary>
-            <typeparam name="TValue">泛型</typeparam>
-            <param name="key">键</param>
-            <param name="updateHanlder">修改委托</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.DropDownListHelper">
-            <summary>
-            DropDownList 帮助类
-            </summary>
-            时间：2015-10-30 8:58
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.DropDownListHelper.SetDataSource(System.Web.UI.WebControls.DropDownList,System.Object,System.String,System.String)">
-            <summary>
-            数据绑定
-            </summary>
-            <param name="dropdownList">DropDownList</param>
-            <param name="dataSource">绑定数据集合对象</param>
-            <param name="textField">显示绑定字段</param>
-            <param name="valueField">隐示绑定字段</param>
-            时间：2015-10-30 9:01
-            备注：
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper">
-            <summary>
-            文件下载
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper.ResponseFile(System.String,System.String,System.Int64)">
-            <summary>
-             输出硬盘文件，提供下载 支持大文件、续传、速度限制、资源占用小
-            </summary>
-            <param name="fileName">下载文件名</param>
-            <param name="filePhysicsPath">带文件名下载路径</param>
-            <param name="limitSpeed">每秒允许下载的字节数</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FileDownHelper.ResponseFile(System.String,System.String)">
-            <summary>
-            分块下载
-            </summary>
-            <param name="fileName">下载文件名</param>
-            <param name="filePhysicsPath">文件物理路径</param>
-            <returns>下载是否成功</returns>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.StaticFileHelper">
-            <summary>
-            静态文件帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.StaticFileHelper.GetMapPathFile(System.String)">
-            <summary>
-            获取物理地址
-            </summary>
-            <param name="fileVirtualPath">文件虚拟路径</param>
-            <returns>物理路径</returns>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper">
-            <summary>
-             GridView 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.InitializeColumnOrderBy(System.Web.UI.WebControls.GridView,System.String,YanZhiwei.DotNet2.Utilities.Enum.OrderType)">
-            <summary>
-            点击列头排序初始设定
-            </summary>
-            <param name="gridView">GridView</param>
-            <param name="orderColumnName">排序依定的绑定数据列名</param>
-            <param name="defaultOrderWay">排序方式，降序或升序</param>
-            时间：2015-11-02 17:21
-            备注：在Page_Load方法中使用；
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetColumnOrderBy(System.Web.UI.WebControls.GridView,System.Action{System.Web.UI.WebControls.GridView,System.String,YanZhiwei.DotNet2.Utilities.Enum.OrderType})">
-            <summary>
-            点击列头排序设定
-            </summary>
-            <param name="gridView">GridView</param>
-            <param name="finallyDataBindFactory">最后数据绑定委托</param>
-            时间：2015-11-02 17:21
-            备注：在OnInit事件中使用；
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetDataSource(System.Web.UI.WebControls.GridView,System.Object)">
-            <summary>
-            GridView数据绑定
-            </summary>
-            <param name="gridView">GridView</param>
-            <param name="datasource">需要绑定数据源</param>
-            时间：2015-11-02 13:41
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetOwnDataPager(System.Web.UI.WebControls.GridView,System.Int32,System.Web.UI.WebControls.PagerButtons,System.Action{System.Web.UI.WebControls.GridView})">
-            <summary>
-            设置数据自带分页
-            </summary>
-            <param name="gridview">GridView</param>
-            <param name="pageSize">分页时每页大小</param>
-            <param name="pagerStyle">自带分页样式</param>
-            <param name="finallyDataBindFactory">最后数据绑定委托</param>
-            时间：2015-11-02 14:51
-            备注：在OnInit事件中使用；
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetPagerTemplate(System.Web.UI.WebControls.GridView,System.Action{System.Web.UI.WebControls.GridView})">
-            <summary>
-            定制化分页模板
-            </summary>
-            <param name="gridView">GridView</param>
-            <param name="finallyDataBindFactory">最后数据绑定委托</param>
-            时间：2015-11-02 15:57
-            备注：在OnInit事件中使用；
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.ToDataTable(System.Web.UI.WebControls.GridView)">
-            <summary>
-            从GridView的数据生成DataTable
-            </summary>
-            <param name="gridview">GridView对象</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.ToExcel(System.Web.UI.WebControls.GridView,System.String)">
-            <summary>
-            将GridView导出到EXCEL
-            </summary>
-            <param name="gridview">GridView</param>
-            <param name="fileName">导出到的文件名称</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.GetCellText(System.Web.UI.WebControls.TableCell)">
-            <summary>
-            获取单元格内容
-            </summary>
-            <param name="cell">TableCell</param>
-            <returns>内容</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.GridViewHelper.SetCellText(System.Web.UI.WebControls.TableCell,System.Int32)">
-            <summary>
-            设置单元格内容
-            </summary>
-            <param name="cell">TableCell</param>
-            <param name="maxLen">最大长度</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper">
-            <summary>
-            JavaScript 操作类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.Alert(System.String)">
-            <summary>
-            JS弹出对消息话框
-            </summary>
-            <param name="message">要显示的消息</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.AlertAndRedirect(System.String,System.String)">
-            <summary>
-            JS弹出消息并跳转
-            </summary>
-            <param name="message">消息</param>
-            <param name="url">跳转的连接</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.JumpToSpecifiedUrl(System.String)">
-            <summary>
-            JS跳转指定URL
-            </summary>
-            <param name="url">要转到的URL</param>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.Refresh">
-            <summary>
-            JS刷新页面
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ClientScriptHelper.RegisterScript(System.String)">
-            <summary>
-            向客户端写入js脚本
-            </summary>
-            <param name="script">js内容</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.HtmlInputFileHelper">
-            <summary>
-            HtmlInputFile 帮助类
-            </summary>
-            时间：2016-01-04 16:57
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.HtmlInputFileHelper.GetBytes(System.Web.UI.HtmlControls.HtmlInputFile)">
-            <summary>
-            将文件读取成byte数组
-            </summary>
-            <param name="htmlInputFile">HtmlInputFile</param>
-            <returns>若未有文件，则返回NULL；</returns>
-            时间：2016-01-04 17:07
-            备注：
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.LinkButtonHelper">
-            <summary>
-            LinkButton 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.LinkButtonHelper.Confirm(System.Web.UI.WebControls.LinkButton,System.String)">
-            <summary>
-            为LinkButton添加确认窗口
-            </summary>
-            <param name="linkbutton">LinkButton</param>
-            <param name="message">确认窗口文字信息</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.ListBoxHelper">
-            <summary>
-            ListBox 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.ListBoxHelper.AddItemTooltip(System.Web.UI.WebControls.ListBox)">
-            <summary>
-            增加ListBox的Tooltip提示
-            </summary>
-            <param name="lb">ListBox</param>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.RequestHelper">
-            <summary>
-            Request 帮助类
-            </summary>
-            时间：2016/7/27 14:28
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.RequestHelper.GetClientInfo(System.Web.HttpRequest)">
-            <summary>
-            获取请求客户端信息
-            </summary>
-            <param name="request">HttpRequest</param>
-            <returns>RequestClientInfo</returns>
-            时间：2016/7/27 14:31
-            备注：
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper">
-            <summary>
-            WebForm 帮助类
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.FindControlRecursive(System.Web.UI.Control,System.String)">
-            <summary>
-            根据ID递归查找
-            </summary>
-            <param name="control">Control</param>
-            <param name="id">控件ID</param>
-            <returns>查找到的控件</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.GetQueryString(System.String)">
-            <summary>
-            根据Key获取QueryString
-            </summary>
-            <param name="key">键值</param>
-            <returns>数值</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.WebFormHelper.RestartWebApplication">
-            <summary>
-            重启程序
-            </summary>
-            <returns>重启是否成功</returns>
-        </member>
-        <member name="T:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper">
-            <summary>
-            URL 帮助类
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.CurrentUrl">
-            <summary>
-            获取当前页面的Url
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.ServerDomain">
-            <summary>
-            获取当前页面的主域，如www.GMS.com主域是GMS.com
-            </summary>
-        </member>
-        <member name="P:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.UserIp">
-            <summary>
-            获取访问用户的IP
-            </summary>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootPath">
-            <summary>
-            取得网站根目录的物理路径
-            </summary>
-            <returns>网站根目录的物理路径</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootURI">
-            <summary>
-            取得网站的根目录的URL
-            </summary>
-            <returns>网站的根目录的URL</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.GetRootURI(System.Web.HttpRequest)">
-            <summary>
-            取得网站的根目录的URL
-            </summary>
-            <param name="reguest">HttpRequest</param>
-            <returns>网站的根目录的URL</returns>
-        </member>
-        <member name="M:YanZhiwei.DotNet2.Utilities.WebForm.FetchHelper.Post(System.String)">
-            <summary>
-            获取表单Post过来的值
-            </summary>
-            <param name="name">参数</param>
-            <returns>参数数值</returns>
         </member>
         <member name="T:YanZhiwei.DotNet2.Utilities.Info.ThreadPoolInfo">
             <summary>

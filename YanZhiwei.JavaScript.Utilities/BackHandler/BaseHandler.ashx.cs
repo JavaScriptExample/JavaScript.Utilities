@@ -62,7 +62,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                 
                 string _filename = string.Format("库位管理{0}.xls", DateTime.Now.ToString("yyyyMMddHHmmss"));
                 NPOIExcel.ToExcel(_result, "库位管理", "库位", Path.Combine(_filePath, _filename));
-                context.CreateResponse(("/UploadFiles/" + _filename).Escape(), HttpStatusCode.OK);
+                context.CreateResponse(("/UploadFiles/" + _filename).Escape(), AjaxResultType.Success, string.Empty);
             }
             else
             {
