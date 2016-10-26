@@ -945,9 +945,6 @@
     <Content Include="store.js\Changelog" />
     <Content Include="store.js\LICENSE" />
     <Content Include="jquery\jquery-ui-1.12.0\package.json" />
-    <Content Include="UploadFiles\库位管理20161016131340.xls" />
-    <Content Include="UploadFiles\库位管理20161016131427.xls" />
-    <Content Include="UploadFiles\库位管理20161016131458.xls" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -956,7 +953,9 @@
     </None>
     <Content Include="jquery\zTree-3.5\zTree.v3.jquery.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UploadFiles\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
