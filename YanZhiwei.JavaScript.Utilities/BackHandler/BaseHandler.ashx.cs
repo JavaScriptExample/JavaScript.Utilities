@@ -16,6 +16,8 @@ using YanZhiwei.DotNet3._5.Utilities.Model;
 using YanZhiwei.DotNet3._5.Utilities.WebForm.JqueryPlugin;
 using YanZhiwei.JavaScript.Utilities.Model;
 using YanZhiwei.DotNet3._5.Utilities.WebForm;
+using YanZhiwei.DotNet2.Utilities.Model;
+
 namespace YanZhiwei.JavaScript.Utilities.BackHandler
 {
     /// <summary>
@@ -45,6 +47,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                     _pageSize = context.Request.Params["PageSize"].ToInt32OrDefault(10);
                 SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-IT-PC\SQLEXPRESS;database=Northwind;user id=sa;Password=sasa");
                 PagedList<Order> _pageResult = _helper.ExecutePageQuery<Order>("[Orders]", "*", "OrderID", OrderType.Desc, string.Empty, _pageSize, _pageIndex);
+                AjaxResult _result = new AjaxResult(string.Empty, AjaxResultType.Success, _pageResult);
                 string _json = SerializeHelper.JsonSerialize(new JsonPagedList<Order>(_pageResult)).ParseJsonDateTime();
                 context.Response.Write(_json);
             }

@@ -27,7 +27,7 @@
 
     <div class="container">
 
-        <div class="row-fluid">
+        <div class="row">
             <div class="span12">
                 <div class="widget box light-grey">
                     <div class="widget-title">
