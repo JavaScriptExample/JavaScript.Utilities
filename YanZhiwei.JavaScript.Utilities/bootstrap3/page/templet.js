@@ -46,10 +46,10 @@ var Templet = {
     },
     ToExcel: function () {
         var _query = "../BackHandler/BaseHandler.ashx?action=exportLocationExcel";
-        jqUtils.Ajax.post(_query, null, function (data) {
-            if (data.Type == 'Success') {
-                if (data.Data != undefined && data.Data != "") {
-                    var path = unescape(data.Data);
+        jqUtils.Ajax.post(_query, null, function (result) {
+            if (result.Type == 'Success') {
+                if (result.Data != undefined && result.Data != "") {
+                    var path = unescape(result.Data);
                     window.location.href = path;
                     return true;
                 } else {
