@@ -43,9 +43,9 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             {
                 int _pageIndex = context.Request.Params["PageIndex"].ToInt32OrDefault(1),
                     _pageSize = context.Request.Params["PageSize"].ToInt32OrDefault(10);
-                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-IT-PC\SQLEXPRESS;database=JooWMS;user id=sa;Password=sasa");
-                PagedList<Location> _pageResult = _helper.ExecutePageQuery<Location>("[Location]", "*", "ID", OrderType.Desc, string.Empty, _pageSize, _pageIndex);
-                string _json = SerializeHelper.JsonSerialize(new JsonPagedList<Location>(_pageResult)).ParseJsonDateTime();
+                SqlServerDataOperator _helper = new SqlServerDataOperator(@"Server=YANZHIWEI-IT-PC\SQLEXPRESS;database=Northwind;user id=sa;Password=sasa");
+                PagedList<Order> _pageResult = _helper.ExecutePageQuery<Order>("[Orders]", "*", "OrderID", OrderType.Desc, string.Empty, _pageSize, _pageIndex);
+                string _json = SerializeHelper.JsonSerialize(new JsonPagedList<Order>(_pageResult)).ParseJsonDateTime();
                 context.Response.Write(_json);
             }
             else if(_actionType.CompareIgnoreCase("exportLocationExcel"))
