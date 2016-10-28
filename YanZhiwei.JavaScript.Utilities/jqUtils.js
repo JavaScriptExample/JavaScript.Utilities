@@ -160,26 +160,49 @@
             }
         }
     }
-    jqUtils.Ajax = {
-        post: function (url, parm, callBack) {
-            /// <summary>
-            /// Post请求
-            /// </summary>
-            /// <param name="url" type="type"></param>
-            /// <param name="parm" type="type"></param>
-            /// <param name="callBack" type="type"></param>
-            $.ajax({
-                type: 'post',
-                dataType: "json",
-                url: url,
-                data: parm,
-                cache: false,
-                async: false,
-                success: function (msg) {
-                    callBack(msg);
-                }
-            });
-        }
-    }
     window.jqUtils = jqUtils;
 })(window);
+
+jQuery.extend({
+    getJSONExt: function (url, paramter, successed) {
+        /// <summary>
+        /// $.getJSON扩展
+        /// </summary>
+        /// <param name="url" type="type">请求连接</param>
+        /// <param name="paramter" type="type">请求参数</param>
+        /// <param name="successed" type="type">成功callback</param>
+        if (url.indexOf("?") > 0) {
+            url = url + "&_t=" + Math.random();
+        } else {
+            url = url + "?_t=" + Math.random();
+        }
+        $.getJSON(url, paramter, function (data, textStatus, jqxhr) {
+            if (jqxhr.status == 200) {
+                if (data.Type == "Success") {
+                    successed(data.Data);
+                }
+                else {
+                    bootbox.alert(data.Content);
+                }
+            }
+            else {
+                bootbox.alert("请求发生故障或者错误，请重试！");
+            }
+        });
+    },
+    postExt: function (url, paramter, successed) {
+        $.post(url, paramter, function (data, textStatus, jqxhr) {
+            if (jqxhr.status == 200) {
+                if (data.Type == "Success") {
+                    successed(data.Data);
+                }
+                else {
+                    bootbox.alert(data.Content);
+                }
+            }
+            else {
+                bootbox.alert("请求发生故障或者错误，请重试！");
+            }
+        }, "json")
+    }
+});
