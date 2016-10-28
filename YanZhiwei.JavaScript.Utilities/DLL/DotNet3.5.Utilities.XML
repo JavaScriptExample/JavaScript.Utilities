@@ -1583,14 +1583,14 @@
             远程证书验证，固定返回true
             </summary>
         </member>
-        <member name="T:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper">
+        <member name="T:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper">
             <summary>
             HttpHandler帮助类
             </summary>
             创建时间:2015-06-08 11:46
             备注说明:<c>null</c>
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateFilePath(System.Web.HttpContext,System.String)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.CreateFilePath(System.Web.HttpContext,System.String)">
             <summary>
             创建文件全路径
             <para>eg: context.CreateFilePath("images/1616/LampGroup/lampGroup.jpg")</para>
@@ -1601,7 +1601,17 @@
             创建时间:2015-06-09 11:15
             备注说明:<c>null</c>
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.Object,YanZhiwei.DotNet2.Utilities.Enum.AjaxResultType,System.String)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.CreatePagedListResponse``1(System.Web.HttpContext,YanZhiwei.DotNet2.Utilities.Collection.PagedList{``0})">
+            <summary>
+            创建分页集合Ajax响应
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="context">HttpContext</param>
+            <param name="pagedList">分页集合</param>
+            时间：2016/10/27 17:45
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.CreateResponse(System.Web.HttpContext,System.Object,YanZhiwei.DotNet2.Utilities.Enum.AjaxResultType,System.String)">
             <summary>
             创建Ajax响应
             </summary>
@@ -1612,7 +1622,7 @@
             时间：2016/10/26 10:15
             备注：
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.CreateResponse(System.Web.HttpContext,System.String)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.CreateResponse(System.Web.HttpContext,System.String)">
             <summary>
             创建Ajax响应
             </summary>
@@ -1621,21 +1631,21 @@
             时间：2016/10/26 10:18
             备注：
         </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.Set304Cache(System.Web.HttpContext)">
-            <summary>
-            自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。
-            </summary>
-            <param name="context">HttpContext</param>
-            时间：2016/8/23 9:05
-            备注：
-        </member>
-        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HandlerHelper.GetImageContentType(System.String)">
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.GetImageContentType(System.String)">
             <summary>
             获取图片类型contentType
             </summary>
             <param name="ext">文件后缀</param>
             <returns>contentType</returns>
             时间：2016/8/23 9:31
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet3._5.Utilities.WebForm.HttpContextHelper.Set304Cache(System.Web.HttpContext)">
+            <summary>
+            自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。
+            </summary>
+            <param name="context">HttpContext</param>
+            时间：2016/8/23 9:05
             备注：
         </member>
         <member name="T:YanZhiwei.DotNet3._5.Utilities.WebForm.JqueryPlugin.DataTableHelper">

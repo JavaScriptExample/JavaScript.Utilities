@@ -361,6 +361,57 @@
             页总数
             </summary>
         </member>
+        <member name="T:YanZhiwei.DotNet2.Utilities.Collection.PagedTable">
+            <summary>
+            分页的DataTable
+            </summary>
+            时间：2016/10/27 11:39
+            备注：
+        </member>
+        <member name="F:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.PagedDataTable">
+            <summary>
+            已经分页的DataTable
+            </summary>
+            时间：2016/10/27 11:33
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.#ctor(System.Data.DataTable,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="table">已分页的DataTable</param>
+            <param name="pageIndex">分页索引</param>
+            <param name="pageSize">分页大小</param>
+            <param name="totalItemCount">总数据行数</param>
+            时间：2016/10/27 11:39
+            备注：
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.CurrentPageIndex">
+            <summary>
+            当前页索引
+            </summary>
+            时间：2016/10/27 11:39
+            备注：
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.PageSize">
+            <summary>
+            分页大小
+            </summary>
+            时间：2016/10/27 11:39
+            备注：
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.TotalItemCount">
+            <summary>
+            记录总数
+            </summary>
+            时间：2016/10/27 11:39
+            备注：
+        </member>
+        <member name="P:YanZhiwei.DotNet2.Utilities.Collection.PagedTable.TotalPageCount">
+            <summary>
+            页总数
+            </summary>
+        </member>
         <member name="T:YanZhiwei.DotNet2.Utilities.Collection.PagedList`1">
             <summary>
             分页数据集合，用于后端返回分页好的集合及前端视图分页控件绑定
