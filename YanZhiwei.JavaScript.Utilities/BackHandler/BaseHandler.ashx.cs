@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using YanZhiwei.DotNet3._5.Utilities.Model;
-using YanZhiwei.DotNet3._5.Utilities.WebForm.JqueryPlugin;
+using YanZhiwei.DotNet3._5.Utilities.WebForm.Jquery;
 using YanZhiwei.JavaScript.Utilities.Model;
 
 namespace YanZhiwei.JavaScript.Utilities.BackHandler
@@ -16,7 +16,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
     {
         public static IEnumerable<Person> GetPersons()
         {
-            for(int i = 0; i < 57; i++)
+            for (int i = 0; i < 57; i++)
             {
                 yield return new Person
                 {
@@ -25,7 +25,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                 };
             }
         }
-        
+
         public void ProcessRequest(HttpContext context)
         {
             context.ExecutePageQuery<Person>((pageLength, pageIndex, orderIndex, orderBy) =>
@@ -33,15 +33,13 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                 var persons = GetPersons();
                 Func<Person, object> order = p =>
                 {
-                    if(orderIndex == 0)
+                    if (orderIndex == 0)
                     {
                         return p.Id;
                     }
-                    
                     return p.Name;
                 };
-                
-                if("desc" == orderBy)
+                if ("desc" == orderBy)
                 {
                     persons = persons.OrderByDescending(order);
                 }
@@ -49,7 +47,6 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
                 {
                     persons = persons.OrderBy(order);
                 }
-                
                 //错误测试
                 //DataTablePageResult result = new DataTablePageResult();
                 //result.ExecuteMessage = "测试错误";
@@ -68,8 +65,10 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             // var iDisplayStart = int.Parse(context.Request["iDisplayStart"]);
             // var iSortCol = int.Parse(context.Request["iSortCol_0"]);
             // var iSortDir = context.Request["sSortDir_0"];
+
             // // Fetch the data from a repository (in my case in-memory)
             // var persons = GetPersons();
+
             // // Define an order function based on the iSortCol parameter
             // Func<Person, object> order = p =>
             // {
@@ -79,6 +78,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             //     }
             //     return p.Name;
             // };
+
             // // Define the order direction based on the iSortDir parameter
             // if ("desc" == iSortDir)
             // {
@@ -88,6 +88,7 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             // {
             //     persons = persons.OrderBy(order);
             // }
+
             // // prepare an anonymous object for JSON serialization
             // var result = new
             // {
@@ -97,13 +98,14 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             //         .Skip(iDisplayStart)
             //         .Take(iDisplayLength)
             // };
+
             // //var serializer = new JavaScriptSerializer();
             //// var json = SerializationHelper.JsonSerialize(result);// serializer.Serialize(result);
             //  context.CreateResponse(result, System.Net.HttpStatusCode.OK);
             // //context.Response.ContentType = "application/json";
             // //context.Response.Write(json);
         }
-        
+
         public bool IsReusable
         {
             get
@@ -112,6 +114,6 @@ namespace YanZhiwei.JavaScript.Utilities.BackHandler
             }
         }
     }
-    
-    
+
+
 }
