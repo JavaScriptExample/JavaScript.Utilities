@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.NPOI2.Utilities</name>
+    </assembly>
+    <members>
+        <member name="M:YanZhiwei.DotNet.NPOI2.Utilities.NOPIHelper.SetRowStyle(NPOI.SS.UserModel.IRow,NPOI.SS.UserModel.ICellStyle)">
+             <summary>
+             样式创建
+             eg:
+            private ICellStyle CreateCellStly(HSSFWorkbook _excel)
+            {
+                IFont _font = _excel.CreateFont();
+                _font.FontHeightInPoints = 11;
+                _font.FontName = "宋体";
+                _font.Boldweight = (short)FontBoldWeight.Bold;
+                ICellStyle _cellStyle = _excel.CreateCellStyle();
+                //_cellStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.LightGreen.Index;
+                //_cellStyle.FillPattern = NPOI.SS.UserModel.FillPattern.SolidForeground;
+                _cellStyle.SetFont(_font);
+                return _cellStyle;
+            }
+             为行设置样式
+             </summary>
+             <param name="row">IRow</param>
+             <param name="cellStyle">ICellStyle</param>
+        </member>
+        <member name="M:YanZhiwei.DotNet.NPOI2.Utilities.NOPIHelper.SetCellValueOnlyThanZero(NPOI.SS.UserModel.ICell,System.Int32)">
+            <summary>
+            当value大于零的时候才插入值
+            </summary>
+            <param name="cell"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:YanZhiwei.DotNet.NPOI2.Utilities.NOPIHelper.SetCellValueOnlyThanZero(NPOI.SS.UserModel.ICell,System.Double)">
+            <summary>
+            当value大于零的时候才插入值
+            </summary>
+            <param name="cell"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:YanZhiwei.DotNet.NPOI2.Utilities.NPOIExcel">
+            <summary>
+            NPOIExcel 操作辅助类
+            </summary>
+            时间：2016/9/9 11:49
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet.NPOI2.Utilities.NPOIExcel.ToDataTable(System.String,System.UInt16,System.UInt16,System.UInt16)">
+            <summary>
+            将EXCEL文件导入到DataTable
+            </summary>
+            <param name="filePath">EXCEL路径</param>
+            <param name="sheetIndex">Sheet索引</param>
+            <param name="headIndex">列索引</param>
+            <param name="rowIndex">行起始索引</param>
+            <returns></returns>
+            时间：2016/10/11 17:07
+            备注：
+        </member>
+        <member name="M:YanZhiwei.DotNet.NPOI2.Utilities.NPOIExcel.ToExcel(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            导出到Excel
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
